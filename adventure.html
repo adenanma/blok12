@@ -1,327 +1,387 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLOK12 BROTHERHOOD</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link rel="stylesheet" href="css.css">
+<!--<link rel="stylesheet" href="css.scss">-->
+
+<section id="top">
+    <img src="bgman.png" id="bg" />
+    <center><h2 id="text">BLOK12 <br> ADVENTURE</h2></center>
+    <img src="man.png" id="man" />
+    <img src="https://aryan-tayal.github.io/Mountains-Parallax/clouds_1.png" id="clouds_1" />
+    <img src="https://aryan-tayal.github.io/Mountains-Parallax/clouds_2.png" id="clouds_2" />
+    <img src="https://aryan-tayal.github.io/Mountains-Parallax/mountain_left.png" id="mountain_left" />
+    <img src="https://aryan-tayal.github.io/Mountains-Parallax/mountain_right.png
+" id="mountain_right" />
+  </section>
+  <section id="sec">
+    <h2>TENTANG KAMI</h2>
+    <p class="lead mb-4 text-center text-lg-start">GO!!!BLOK ADVENTURE adalah unit kegiatan warga yang penuh semangat petualangan di Blok 12. Kami mengadakan berbagai kegiatan outdoor seperti hiking, camping, dan eksplorasi alam untuk meningkatkan keberanian dan kecintaan pada alam. Bergabunglah dengan kami untuk merasakan sensasi petualangan yang mendebarkan dan memperkuat ikatan persaudaraan!</p>
+  </section>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', serif;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+}
+#top{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#top::before{
+    content:'';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height:200px;
+    width: 100%;
+    background:linear-gradient(to top,#fff,transparent);
+    z-index: 1000;
+}
+#man{
+    top: inherit;
+    bottom: 0;
+}
+section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+#text{
+    position: relative;
+    color:white;
+    font-size: 7rem;
+    padding-bottom: 100px;
+}
+#sec{
+    padding:100px;
+  padding-bottom:20px;
+}
+#sec h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    color: #20496a;
+}
+#sec p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+    font-weight: 300;
+    color: #20496a;
+}
+
+@media screen and (max-width: 768px) {
+    #sec {
+        padding: 50px 20px;
+    }
+    #sec h2 {
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #sec {
+        padding: 30px 15px;
+    }
+    #sec p {
+        line-height: 1.4;
+    }
+}
+footer{
+  margin-top:30px;
+  display:flex;
+  padding:20px;
+  justify-content:space-evenly;
+  align-items:center;
+  background-color:#B0DFEA;
+}
+footer a{
+  color:#20496a;
+}
+footer a i{
+    transition:0.2s;
+}
+footer a:nth-of-type(3),footer a:nth-of-type(4), footer a:nth-of-type(5){
+font-size:1.3rem;}
+footer a i:hover{
+  transform:translateY(-10px);
+}
+  </style>
+
+  <script>
+    // GitHub Repo : https://github.com/aryan-tayal/Mountains-Parallax
+// Live Site : https://aryan-tayal.github.io/Mountains-Parallax/
+
+const mountainLeft = document.querySelector('#mountain_left');
+const mountainRight = document.querySelector('#mountain_right');
+const cloud1 = document.querySelector('#clouds_1');
+const cloud2 = document.querySelector('#clouds_2');
+const text = document.querySelector('#text');
+const man = document.querySelector('#man');
+
+window.addEventListener('scroll',()=>{
+    let value = scrollY;
+    mountainLeft.style.left = `-${value/0.7}px`
+    cloud2.style.left = `-${value*2}px`
+    mountainRight.style.left = `${value/0.7}px`
+    cloud1.style.left = `${value*2}px`
+    text.style.bottom = `-${value}px`;
+    man.style.height = `${window.innerHeight - value}px`
+})
+  </script>
   
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="img/logo.jpeg" alt="" height="30" class="d-inline-block align-top">
-                BLOK12 BROTHERHOOD
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">BERANDA</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tentang">TENTANG GO!!!BLOK ADVENTURE</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#kegiatan">MOMENT KAMI</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#kontak">PESAN UNTUK KAMI</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <div id="slid">
+    <div class="img-div">
+       <div class="image"> 
+          <img id="slider" src="https://pbs.twimg.com/media/EbTKzFkXQAAOf6Q?format=jpg&name=small" alt="Gambar Petualangan">
+       </div>
+   </div>
+ </div>
+ <div class="butt">
+     <button onclick="prev()">&#10094; Sebelumnya</button>
+     <button onclick="next()">Selanjutnya &#10095;</button>
+ </div>
+ <style>
+   #slid {
+     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+     border-radius: 15px;
+     overflow: hidden;
+     margin: 20px auto;
+     max-width: 90%;
+     width: 100%;
+   }
+   .img-div {
+     width: 100%;
+     padding-top: 56.25%; /* Rasio aspek 16:9 */
+     position: relative;
+   }
+   .image {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+   }
+   #slider {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: transform 0.3s ease;
+   }
+   #slider:hover {
+     transform: scale(1.05);
+   }
+   .butt {
+     text-align: center;
+     margin-top: 20px;
+   }
+   .butt button {
+     background-color: #20496a;
+     color: white;
+     border: none;
+     padding: clamp(5px, 2vw, 10px) clamp(10px, 4vw, 20px);
+     margin: clamp(5px, 1vw, 10px);
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+     font-size: clamp(11px, 2.5vw, 16px);
+   }
+   .butt button:hover {
+     background-color: #1c3d5a;
+   }
+   
+   /* Responsif untuk berbagai ukuran layar */
+   @media (max-width: 1400px) {
+     #slid {
+       max-width: 95%;
+     }
+   }
+   
+   @media (max-width: 1200px) {
+     #slid {
+       max-width: 98%;
+     }
+   }
+   
+   @media (max-width: 992px) {
+     .img-div {
+       padding-top: 60%; /* Sedikit lebih tinggi untuk tablet */
+     }
+   }
+   
+   @media (max-width: 768px) {
+     #slid {
+       max-width: 100%;
+       border-radius: 10px;
+     }
+     .img-div {
+       padding-top: 66.67%; /* Rasio aspek 3:2 */
+     }
+   }
+   
+   @media (max-width: 576px) {
+     .img-div {
+       padding-top: 75%; /* Rasio aspek 4:3 untuk layar kecil */
+     }
+   }
+   
+   @media (max-width: 480px) {
+     #slid {
+       border-radius: 8px;
+     }
+   }
+   
+   @media (max-width: 320px) {
+     .img-div {
+       padding-top: 100%; /* Rasio aspek 1:1 untuk layar sangat kecil */
+     }
+   }
+   
+   /* Orientasi landscape untuk perangkat mobile */
+   @media (max-height: 500px) and (orientation: landscape) {
+     .img-div {
+       padding-top: 40%; /* Lebih rendah untuk orientasi landscape */
+     }
+     .butt {
+       margin-top: 10px;
+     }
+   }
+ </style>
 
-    
-    <!-- Tentang Section -->
-    <section id="tentang" class="py-5 min-vh-100 d-flex align-items-center">
-        <div class="container">
-            <div class="row g-4 align-items-center">
-                <div class="col-lg-6 col-md-12" data-aos="fade-right">
-                    <h2 class="mb-4 fw-bold text-center text-lg-start">Tentang Kami</h2>
-                    <p class="lead mb-4 text-center text-lg-start">GO!!!BLOK ADVENTURE adalah unit kegiatan warga yang penuh semangat petualangan di Blok 12. Kami mengadakan berbagai kegiatan outdoor seperti hiking, camping, dan eksplorasi alam untuk meningkatkan keberanian dan kecintaan pada alam. Bergabunglah dengan kami untuk merasakan sensasi petualangan yang mendebarkan dan memperkuat ikatan persaudaraan!</p>
-                </div>
-                <div class="col-lg-6 col-md-12 mt-4 mt-lg-0" data-aos="fade-left">
-                    <div class="ratio ratio-1x1 shadow-lg rounded overflow-hidden">
-                        <img src="img/adventure.jpeg" alt="Tim WebsiteKu" class="img-fluid w-100 h-100 object-fit-cover">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<script>
+     var images = [
+   "https://pbs.twimg.com/media/EbTKzFkXQAAOf6Q?format=jpg&name=small", 
+   "https://pbs.twimg.com/media/EbRZVvBXgAAMuN4?format=jpg&name=small", 
+   "https://pbs.twimg.com/media/EbRWjmvWAAYMXti?format=jpg&name=small",
+   "https://pbs.twimg.com/media/EbRYWlaX0AActIc?format=jpg&name=small",
+   "https://pbs.twimg.com/media/EbGomtlXQAIPsps?format=jpg&name=small",
+   "https://pbs.twimg.com/media/EbGkvjoWsAEXxx2?format=jpg&name=small"
+  ];
+ var num = 0;
 
-    <!-- Galeri Kegiatan -->
-    <section id="kegiatan" class="py-5">
-        <div class="container">
-            <h2 class="text-center mt-4 mb-md-5 fw-bold" data-aos="fade-up">MOMENT KAMI</h2>
-        </div>
-    </section>
-
-    <main class='gallery'>
-        <div class='gallery-track'>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1607419726991-5fc7e74cda67?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1601042879364-f3947d3f9c16?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?q=80&w=2272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1514439827219-9137a0b99245?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1525790935716-36a6c45ad067?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1561344640-2453889cde5b?q=80&w=2467&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1561602009-0ecd1cada8bd?q=80&w=2456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1560583306-bd304a162229?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1535478044878-3ed83d5456ef?q=80&w=2382&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1610322231968-31322d42851f?q=80&w=2536&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1561344640-2453889cde5b?q=80&w=2467&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1536890992765-f42a1ee1e2a8?q=80&w=2121&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1560583306-bd304a162229?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1573455494060-c5595004fb6c?q=80&w=2280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1627740660376-bc7506720b8a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1563964040780-8605906e3eb6?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1592507645647-f2f1d8103c86?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1541591681685-0246308f076b?q=80&w=2489&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1539027994943-7d6960acfaad?q=80&w=2535&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1573501815578-6252ee088c47?q=80&w=2283&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1558273246-57d22047406d?q=80&w=2535&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1534685042784-4c7c97ae40d7?q=80&w=2427&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-          <div class='card'>
-            <div class='card-image-wrapper'>
-              <img src='https://images.unsplash.com/photo-1627740660376-bc7506720b8a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
-            </div>
-          </div>
-        </div>
-      </main>
-      
-      <style>
-        * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.gallery-track {
-  position: fixed;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 0.25rem;
-  padding: 0.25rem;
-  will-change: transform;
-}
-
-.card {
-  height: 400px;
-  overflow: hidden;
-
-  & .card-image-wrapper {
-    height: 135%;
-    will-change: transform;
-
-    & img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+ function next() {
+  var slider = document.getElementById("slider");
+  num++;
+  if(num >= images.length) {
+    num = 0;
   }
-} 
-
-@media (width < 800px) {
-  .gallery-track {
-    grid-template-columns: repeat(2,1fr);
+  slider.src = images[num];
   }
-}
 
-@media (width < 550px) {
-  .gallery-track {
-    grid-template-columns: repeat(1,1fr);
+ function prev() {
+  var slider = document.getElementById("slider");
+  num--;
+  if(num < 0) {
+    num = images.length-1;
   }
+  slider.src = images[num];
 }
-      </style>
-   <script>const gallery = document.querySelector('.gallery');
-    const track = document.querySelector('.gallery-track');
-    const cards = document.querySelectorAll('.card');
-    const easing = 0.05;
-    let startY = 0;
-    let endY = 0;
-    let raf;
-    
-    const lerp = (start,end,t) => start * (1-t) + end * t;
-    
-    function updateScroll() {
-      startY = lerp(startY,endY,easing);
-      gallery.style.height = `${track.clientHeight}px`;
-      track.style.transform = `translateY(-${startY}px)`;
-      activateParallax();
-      raf = requestAnimationFrame(updateScroll);
-      if (startY.toFixed(1) === window.scrollY.toFixed(1)) cancelAnimationFrame(raf);
-    }
-    
-    function startScroll() {
-      endY = window.scrollY; 
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(updateScroll);
-    }
-    
-    function parallax(card) {
-      const wrapper = card.querySelector('.card-image-wrapper');
-      const diff = card.offsetHeight - wrapper.offsetHeight;
-      const {top} = card.getBoundingClientRect();
-      const progress = top / window.innerHeight;
-      const yPos = diff * progress;
-      wrapper.style.transform = `translateY(${yPos}px)`;
-    }
-    
-    const activateParallax = () => cards.forEach(parallax);
-    
-    function init() {
-      activateParallax();
-      startScroll();
-    }
-    
-    window.addEventListener('load',updateScroll,false);
-    window.addEventListener('scroll',init,false);
-    window.addEventListener('resize',updateScroll,false);
-    </script>
+</script>
 
-    <!-- Kontak Section -->
-    <section id="kontak" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">PESAN UNTUK GO!!!BLOK ADVENTURE</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <form method="POST" name="contact-form" id="my-form">
-                        <div class="mb-3">
-                            <input type="text" name="name" class="form-control" placeholder="Nama Anda" required>
-                        </div>
-                        <div class="mb-3">
-                            <textarea name="pesan" class="form-control" rows="4" placeholder="Pesan Anda" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-dark w-100">Kirim Pesan</button>
-                    </form>
-                </div>
+<!-- Kontak Section -->
+<section id="kontak" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Hubungi Kami</h2>
+        <form>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Nama Anda" required>
             </div>
-        </div>
-    </section>
+            <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Email Anda" required>
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" rows="5" placeholder="Pesan Anda" required></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary px-4 py-2">Kirim Pesan</button>
+            </div>
+        </form>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="text-white text-center py-3" style="background-color: #bdbbbb;">
-        <div class="container">
-            <p>BLOK12 BROTHERHOOD, 2024.</p>
-        </div>
-    </footer>
+<style>
+    #kontak {
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        padding: clamp(2rem, 5%, 5rem) 0;
+    }
+    #kontak h2 {
+        color: #1c3d5a;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: clamp(1.2rem, 4vw, 2.5rem);
+        margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    }
+    #kontak .form-control {
+        border-radius: 20px;
+        border: 2px solid #1c3d5a;
+        padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.75rem, 3vw, 1.25rem);
+        font-size: clamp(0.8rem, 2vw, 1rem);
+        margin-bottom: clamp(0.5rem, 2vw, 1rem);
+        width: 100%;
+        max-width: 100%;
+    }
+    #kontak .form-control:focus {
+        box-shadow: 0 0 0 0.2rem rgba(28, 61, 90, 0.25);
+    }
+    #kontak button {
+        background-color: #1c3d5a;
+        border: none;
+        border-radius: 20px;
+        transition: all 0.3s;
+        font-size: clamp(0.8rem, 2vw, 1rem);
+        padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 4vw, 2rem);
+        width: 100%;
+        max-width: clamp(180px, 50vw, 300px);
+    }
+    #kontak button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    #kontak .container {
+        width: clamp(280px, 90%, 1200px);
+        margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+        #kontak {
+            padding: clamp(2rem, 7%, 4rem) 0;
+        }
+        #kontak h2 {
+            font-size: clamp(1.2rem, 5vw, 2rem);
+        }
+        #kontak .form-control {
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(0.6rem, 2.5vw, 1rem);
+        }
+        #kontak button {
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(1rem, 3vw, 1.5rem);
+        }
+    }
+</style>
 
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="js/script.js"></script>
-    <script src="js/form.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</body>
-</html>
+
+
+
+<!-- Footer -->
+<footer class="text-white text-center py-3" style="background-color: #bdbbbb;">
+    <div class="container">
+        <p>BLOK12 BROTHERHOOD, 2024.</p>
+    </div>
+</footer>
+
+<script src="js.js"></script>

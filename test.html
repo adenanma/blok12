@@ -1,0 +1,741 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="tiktok-container">
+  <div class="tiktok-scroll">
+    <div class="tiktok-video">
+      <video src="https://videos.pexels.com/video-files/7988352/7988352-uhd_1440_2560_30fps.mp4" loop playsinline></video>
+      <div class="tiktok-overlay">
+        <div class="tiktok-info">
+          <h3>@pengguna1</h3>
+          <p>Deskripsi video keren #viral #fyp</p>
+        </div>
+        <div class="tiktok-actions">
+          <div class="tiktok-action">
+            <i class="fas fa-heart"></i>
+            <span>0</span>
+          </div>
+          <div class="tiktok-action">
+            <i class="fas fa-comment-dots"></i>
+            <span>0</span>
+          </div>
+          <div class="tiktok-action">
+            <i class="fas fa-share"></i>
+            <span>0</span>
+          </div>
+          <div class="tiktok-action">
+            <i class="fas fa-music"></i>
+            <span>Lagu</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tiktok-video">
+      <video src="https://videos.pexels.com/video-files/17382716/17382716-uhd_2560_1440_24fps.mp4" loop playsinline></video>
+      <div class="tiktok-overlay">
+        <div class="tiktok-info">
+          <h3>@pengguna2</h3>
+          <p>Video lucu banget 😂 #komedi #tiktok</p>
+        </div>
+        <div class="tiktok-actions">
+          <div class="tiktok-action">
+            <i class="fas fa-heart"></i>
+            <span>800K</span>
+          </div>
+          <div class="tiktok-action">
+            <i class="fas fa-comment-dots"></i>
+            <span>7.2K</span>
+          </div>
+          <div class="tiktok-action">
+            <i class="fas fa-share"></i>
+            <span>3.1K</span>
+          </div>
+          <div class="tiktok-action">
+            <i class="fas fa-music"></i>
+            <span>Lagu</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tiktok-video">
+      <video src="https://videos.pexels.com/video-files/15932548/15932548-hd_1080_1920_30fps.mp4" loop playsinline></video>
+      <div class="tiktok-overlay">
+        <div class="tiktok-info">
+          <h3>@pengguna3</h3>
+          <p>Tutorial makeup simpel #beauty #tutorial</p>
+        </div>
+        <div class="tiktok-actions">
+          <div class="tiktok-action">
+            <i class="fas fa-heart"></i>
+            <span>500K</span>
+          </div>
+          <div class="tiktok-action">
+            <i class="fas fa-comment-dots"></i>
+            <span>4.8K</span>
+          </div>
+          <div class="tiktok-action">
+            <i class="fas fa-share"></i>
+            <span>2.3K</span>
+          </div>
+          <div class="tiktok-action">
+            <i class="fas fa-music"></i>
+            <span>Lagu</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .tiktok-container {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    background-color: #000;
+  }
+
+  .tiktok-scroll {
+    height: 100%;
+    width: 100%;
+  }
+
+  .tiktok-video {
+    height: 100%;
+    width: 100%;
+    scroll-snap-align: start;
+    position: relative;
+  }
+
+  .tiktok-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .tiktok-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .tiktok-info {
+    max-width: 80%;
+  }
+
+  .tiktok-info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .tiktok-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    opacity: 0.9;
+  }
+
+  .tiktok-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tiktok-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .tiktok-action i {
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+
+  .tiktok-action span {
+    font-size: 12px;
+    opacity: 0.9;
+  }
+
+  @media (orientation: landscape) {
+    .tiktok-overlay {
+      padding: 20px 60px;
+    }
+
+    .tiktok-actions {
+      flex-direction: column;
+      position: absolute;
+      right: 10px;
+      bottom: 80px;
+    }
+
+    .tiktok-action {
+      margin-bottom: 20px;
+    }
+  }
+</style>
+<!--SCRIPT LIKE-->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const likeButtons = document.querySelectorAll('.tiktok-action .fa-heart');
+    
+    likeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const likeCount = this.nextElementSibling;
+        let currentLikes = parseInt(likeCount.textContent.replace(/,/g, ''));
+        
+        if (this.classList.contains('liked')) {
+          currentLikes--;
+          this.classList.remove('liked');
+          this.style.color = '';
+        } else {
+          currentLikes++;
+          this.classList.add('liked');
+          this.style.color = 'red';
+        }
+        
+        likeCount.textContent = currentLikes.toLocaleString();
+      });
+    });
+  });
+</script>
+<style>
+    .tiktok-action .fa-heart {
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    
+    .tiktok-action .fa-heart.liked {
+      color: red;
+    }
+</style>
+<!--SCRIPT HABIS LIKE-->
+
+
+<!--SCRIPT KOMENTAR-->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const commentButtons = document.querySelectorAll('.tiktok-action .fa-comment-dots');
+    
+    commentButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const commentBox = document.createElement('div');
+        commentBox.className = 'comment-box';
+        commentBox.innerHTML = `
+          <div class="comment-header">
+            <h3>Komentar</h3>
+            <button class="close-btn">&times;</button>
+          </div>
+          <div class="comment-list"></div>
+          <div class="comment-input">
+            <textarea placeholder="Tulis komentar Anda di sini"></textarea>
+            <button class="send-btn">
+              <i class="fas fa-space-shuttle "></i>
+            </button>
+          </div>
+        `;
+        
+        const videoContainer = this.closest('.tiktok-video');
+        videoContainer.appendChild(commentBox);
+        
+        setTimeout(() => {
+          commentBox.classList.add('show');
+        }, 10);
+        
+        const closeBtn = commentBox.querySelector('.close-btn');
+        closeBtn.addEventListener('click', () => {
+          commentBox.classList.remove('show');
+          setTimeout(() => {
+            commentBox.remove();
+          }, 300);
+        });
+        
+        const sendBtn = commentBox.querySelector('.send-btn');
+        const textarea = commentBox.querySelector('textarea');
+        const commentList = commentBox.querySelector('.comment-list');
+        
+        // Simulasi koneksi ke server untuk mendapatkan komentar sebelumnya
+        function fetchPreviousComments() {
+          return new Promise((resolve) => {
+            setTimeout(() => {
+              resolve([
+                
+              ]);
+            }, 1000);
+          });
+        }
+        
+        // Memuat komentar sebelumnya
+        fetchPreviousComments().then(previousComments => {
+          previousComments.forEach(comment => {
+            const commentEl = createCommentElement(comment.id, comment.username, comment.text);
+            commentList.appendChild(commentEl);
+          });
+          commentCount = previousComments.length;
+          updateCommentCount();
+        });
+        
+        let commentCount = 0;
+        let nextCommentId = 4; // Mulai dari 4 karena ada 3 komentar sebelumnya
+        
+        function updateCommentCount() {
+          const commentCountSpan = button.nextElementSibling;
+          commentCountSpan.textContent = commentCount;
+        }
+        
+        sendBtn.addEventListener('click', () => {
+          if (textarea.value.trim() !== '') {
+            const newComment = {
+              id: nextCommentId,
+              username: 'Pengguna',
+              text: textarea.value
+            };
+            
+            // Simulasi pengiriman komentar ke server
+            sendCommentToServer(newComment).then(() => {
+              const commentEl = createCommentElement(newComment.id, newComment.username, newComment.text);
+              commentList.appendChild(commentEl);
+              textarea.value = '';
+              nextCommentId++;
+              commentCount++;
+              updateCommentCount();
+              
+              // Scroll ke komentar baru
+              commentEl.scrollIntoView({ behavior: 'smooth' });
+            });
+          }
+        });
+        
+        function sendCommentToServer(comment) {
+          // Simulasi pengiriman ke server
+          return new Promise((resolve) => {
+            setTimeout(() => {
+              console.log('Komentar terkirim ke server:', comment);
+              resolve();
+            }, 500);
+          });
+        }
+        
+        function createCommentElement(id, username, text) {
+          const commentEl = document.createElement('div');
+          commentEl.className = 'comment-item';
+          commentEl.dataset.id = id;
+          commentEl.innerHTML = `
+            <div class="comment-avatar">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="comment-content">
+              <p class="comment-username">${username}</p>
+              <p class="comment-text">${text}</p>
+            </div>
+            <button class="delete-btn">
+              <i class="fas fa-trash"></i>
+            </button>
+          `;
+          
+          const deleteBtn = commentEl.querySelector('.delete-btn');
+          deleteBtn.addEventListener('click', () => {
+            // Simulasi penghapusan komentar dari server
+            deleteCommentFromServer(id).then(() => {
+              commentEl.remove();
+              commentCount--;
+              updateCommentCount();
+            });
+          });
+          
+          return commentEl;
+        }
+        
+        function deleteCommentFromServer(id) {
+          // Simulasi penghapusan dari server
+          return new Promise((resolve) => {
+            setTimeout(() => {
+              console.log('Komentar dihapus dari server:', id);
+              resolve();
+            }, 500);
+          });
+        }
+        
+        commentBox.addEventListener('touchmove', (e) => {
+          e.stopPropagation();
+        }, { passive: false });
+        
+        this.classList.add('active');
+        
+        setTimeout(() => {
+          this.classList.remove('active');
+        }, 2000);
+      });
+    });
+  });
+</script>
+
+<style>
+  .tiktok-action .fa-comment-dots {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .tiktok-action .fa-comment-dots.active {
+    color: #1da1f2;
+    transform: scale(1.2);
+  }
+
+  .comment-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 90%;
+    max-width: 400px;
+    max-height: 80vh;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+  }
+
+  .comment-box.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 2px solid #eee;
+  }
+
+  .comment-header h3 {
+    font-size: 1.2em;
+    color: #333;
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .close-btn:hover {
+    color: #333;
+  }
+
+  .comment-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+  }
+
+  .comment-input {
+    display: flex;
+    padding: 15px;
+    border-top: 2px solid #eee;
+  }
+
+  .comment-input textarea {
+    flex-grow: 1;
+    resize: none;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .comment-input textarea:focus {
+    border-color: #1da1f2;
+    box-shadow: 0 0 0 2px rgba(29, 161, 242, 0.2);
+  }
+
+  .comment-input .send-btn {
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .comment-input .send-btn:hover {
+    background-color: #0c85d0;
+    transform: scale(1.05);
+  }
+
+  .comment-item {
+    display: flex;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 20px;
+    color: #999;
+  }
+
+  .comment-content {
+    flex-grow: 1;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    padding: 10px;
+  }
+
+  .comment-username {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+
+  .comment-text {
+    color: #666;
+  }
+
+  .delete-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .delete-btn:hover {
+    color: #ff4136;
+  }
+
+  @media (max-width: 480px) {
+    .comment-box {
+      width: 95%;
+      max-height: 90vh;
+    }
+  }
+
+  @media (orientation: landscape) {
+    .comment-box {
+      max-width: 80%;
+      max-height: 90vh;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .comment-box {
+      background-color: rgba(30, 30, 30, 0.95);
+    }
+
+    .comment-header h3,
+    .close-btn:hover,
+    .comment-username {
+      color: #fff;
+    }
+
+    .comment-content {
+      background-color: #2a2a2a;
+    }
+
+    .comment-text {
+      color: #ccc;
+    }
+
+    .comment-input textarea {
+      background-color: #2a2a2a;
+      color: #fff;
+      border-color: #444;
+    }
+
+    .comment-input textarea:focus {
+      border-color: #1da1f2;
+    }
+
+    .delete-btn:hover {
+      color: #ff6b6b;
+    }
+  }
+</style>
+<!--SCRIPT HABIS KOMENTAR-->
+
+<!--SCRIPT SHARE-->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const shareButtons = document.querySelectorAll('.tiktok-action .fa-share');
+    
+    shareButtons.forEach(button => {
+      let shareCount = parseInt(button.nextElementSibling.textContent) || 0;
+      button.addEventListener('click', function() {
+        const videoUrl = window.location.href; // Gunakan URL halaman saat ini sebagai contoh
+        
+        // Buat elemen sementara untuk menyalin URL
+        const tempInput = document.createElement('input');
+        tempInput.value = videoUrl;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        
+        // Tambahkan jumlah share
+        shareCount++;
+        
+        // Tampilkan pesan bahwa URL telah disalin
+        const shareMessage = document.createElement('div');
+        shareMessage.textContent = `URL video telah disalin! (${shareCount})`;
+        shareMessage.style.cssText = `
+          position: fixed;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: rgba(0, 0, 0, 0.7);
+          color: white;
+          padding: 10px 20px;
+          border-radius: 20px;
+          font-size: 14px;
+          z-index: 1000;
+        `;
+        document.body.appendChild(shareMessage);
+        
+        // Hapus pesan setelah 2 detik
+        setTimeout(() => {
+          document.body.removeChild(shareMessage);
+        }, 2000);
+        
+        // Animasi tombol share
+        this.classList.add('active');
+        setTimeout(() => {
+          this.classList.remove('active');
+        }, 300);
+        
+        // Perbarui jumlah share yang ditampilkan
+        const shareCountElement = this.nextElementSibling;
+        shareCountElement.textContent = shareCount;
+        
+        // Simpan jumlah share ke localStorage
+        const videoId = this.closest('.tiktok-video').dataset.videoId;
+        localStorage.setItem(`shareCount_${videoId}`, shareCount);
+      });
+    });
+  });
+</script>
+
+<style>
+  .tiktok-action .fa-share {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .tiktok-action .fa-share.active {
+    transform: scale(1.2);
+  }
+</style>
+<!--SCRIPT HABIS SHARE-->
+
+<script>
+  const videos = document.querySelectorAll('.tiktok-video video');
+  const container = document.querySelector('.tiktok-container');
+
+  function handleVideoVisibility() {
+    const videoItems = document.querySelectorAll('.tiktok-video');
+    videoItems.forEach(item => {
+      const video = item.querySelector('video');
+      const rect = item.getBoundingClientRect();
+      const threshold = window.innerHeight / 2;
+      if (rect.top < threshold && rect.bottom > threshold) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  }
+
+  videos.forEach(video => {
+    video.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  });
+
+  container.addEventListener('scroll', handleVideoVisibility);
+  window.addEventListener('resize', handleVideoVisibility);
+
+  // Panggilan awal untuk mengatur status video yang benar
+  handleVideoVisibility();
+
+  // Tambahkan Intersection Observer untuk memantau video yang terlihat
+  const options = {
+    root: container,
+    threshold: 0.5
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.play();
+      } else {
+        entry.target.pause();
+      }
+    });
+  }, options);
+
+  videos.forEach(video => {
+    observer.observe(video);
+  });
+</script>

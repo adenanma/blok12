@@ -10,68 +10,82 @@
 
 
 <div class="tiktok-container">
-  <div class="home-button-container">
-    <button href="index.html" class="home-button">
-      <i class="fas fa-home"></i>
-      <span>Home</span>
-    </button>
+
+
+  <div class="button-container">
+    <a href="index.html" style="background-color: #00f2ea; border-color: #00f2ea; color: #000;" class="btn btn-primary btn-responsive">HOME</a>
+    <a href="pp.html" style="background-color: #00f2ea; border-color: #00f2ea; color: #000;" class="btn btn-primary btn-responsive">WARGA BLOK12</a>
   </div>
+  
 
   <style>
-    .home-button-container {
+    .button-container {
       position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       z-index: 1000;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      width: 100%;
+      gap: 10px;
+      width: 90%;
+      max-width: 300px;
     }
 
-    .home-button {
-      background-color: rgba(255, 255, 255, 0);
-      border: none;
-      border-radius: 50%;
-      width: clamp(40px, 10vw, 60px);
-      height: clamp(40px, 10vw, 60px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 10px;
+    .btn-responsive {
+      padding: 8px 16px;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      white-space: nowrap;
     }
 
-    .home-button:hover {
-      background-color: rgba(255, 255, 255, 0);
-      transform: scale(1.1);
-    }
-
-    .home-button i {
-      font-size: clamp(16px, 4vw, 24px);
-      color: #333;
-    }
-
-    .home-button span {
-      font-size: clamp(8px, 2vw, 12px);
-      margin-top: 5px;
-      color: #333;
-    }
-
-    @media screen and (max-width: 768px) {
-      .home-button-container {
-        top: 10px;
-        left: 10px;
-        justify-content: flex-start;
+    @media screen and (max-width: 480px) {
+      .button-container {
+        top: 5px;
+        max-width: 250px;
+      }
+      .btn-responsive {
+        padding: 5px 10px;
+        font-size: 0.8rem;
       }
     }
-
-    @media screen and (min-width: 769px) {
-      .home-button-container {
+    
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+      .button-container {
+        top: 15px;
+        max-width: 280px;
+      }
+      .btn-responsive {
+        padding: 7px 14px;
+        font-size: 0.9rem;
+      }
+    }
+    
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+      .button-container {
         top: 20px;
+        max-width: 300px;
+      }
+      .btn-responsive {
+        padding: 8px 16px;
+        font-size: 1rem;
+      }
+    }
+    
+    @media screen and (min-width: 1025px) {
+      .button-container {
+        top: 25px;
+        max-width: 320px;
+      }
+      .btn-responsive {
+        padding: 10px 20px;
+        font-size: 1.1rem;
       }
     }
   </style>
 
+
+  
   <div class="tiktok-scroll">
     <div class="tiktok-video">
       <video src="https://videos.pexels.com/video-files/7988352/7988352-uhd_1440_2560_30fps.mp4" loop playsinline></video>

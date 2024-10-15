@@ -10,6 +10,68 @@
 
 
 <div class="tiktok-container">
+  <div class="home-button-container">
+    <button href="index.html" class="home-button">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </button>
+  </div>
+
+  <style>
+    .home-button-container {
+      position: fixed;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .home-button {
+      background-color: rgba(255, 255, 255, 0);
+      border: none;
+      border-radius: 50%;
+      width: clamp(40px, 10vw, 60px);
+      height: clamp(40px, 10vw, 60px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .home-button:hover {
+      background-color: rgba(255, 255, 255, 0);
+      transform: scale(1.1);
+    }
+
+    .home-button i {
+      font-size: clamp(16px, 4vw, 24px);
+      color: #333;
+    }
+
+    .home-button span {
+      font-size: clamp(8px, 2vw, 12px);
+      margin-top: 5px;
+      color: #333;
+    }
+
+    @media screen and (max-width: 768px) {
+      .home-button-container {
+        top: 10px;
+        left: 10px;
+        justify-content: flex-start;
+      }
+    }
+
+    @media screen and (min-width: 769px) {
+      .home-button-container {
+        top: 20px;
+      }
+    }
+  </style>
+
   <div class="tiktok-scroll">
     <div class="tiktok-video">
       <video src="https://videos.pexels.com/video-files/7988352/7988352-uhd_1440_2560_30fps.mp4" loop playsinline></video>

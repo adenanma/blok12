@@ -6,64 +6,39 @@
 
 
 
-
-
-
 <div class="tiktok-container">
 
 
   <div class="button-container">
-    <a href="index.html" style="background-color: #00f2ea; border-color: #00f2ea; color: #000;" class="btn btn-primary btn-responsive">HOME</a>
-    <a href="pp.html" style="background-color: #00f2ea; border-color: #00f2ea; color: #000;" class="btn btn-primary btn-responsive">WARGA BLOK12</a>
+    <a href="index.html" style="background-color: #00f2ea00; border-color: #ffffff00; color: #ffffff;" class="btn btn-primary btn-responsive">HOME</a>
+    <a href="pp.html" style="background-color: #00f2ea00; border-color: #ffffff00; color: #ffffff;" class="btn btn-primary btn-responsive">WARGA BLOK12</a>
   </div>
   
 
   <style>
     .button-container {
       position: fixed;
-      top: 20px;
+      top: 30px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 1000;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      width: 90%;
-      max-width: 300px;
+      gap: 15px;
+      width: 95%;
+      max-width: 400px;
     }
 
     .btn-responsive {
-      padding: 8px 16px;
-      font-size: clamp(0.8rem, 2vw, 1rem);
+      padding: 12px 24px;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
       white-space: nowrap;
     }
 
     @media screen and (max-width: 480px) {
       .button-container {
-        top: 5px;
-        max-width: 250px;
-      }
-      .btn-responsive {
-        padding: 5px 10px;
-        font-size: 0.8rem;
-      }
-    }
-    
-    @media screen and (min-width: 481px) and (max-width: 768px) {
-      .button-container {
-        top: 15px;
-        max-width: 280px;
-      }
-      .btn-responsive {
-        padding: 7px 14px;
-        font-size: 0.9rem;
-      }
-    }
-    
-    @media screen and (min-width: 769px) and (max-width: 1024px) {
-      .button-container {
-        top: 20px;
+        top: 10px;
         max-width: 300px;
       }
       .btn-responsive {
@@ -72,14 +47,36 @@
       }
     }
     
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 481px) and (max-width: 768px) {
       .button-container {
-        top: 25px;
-        max-width: 320px;
+        top: 20px;
+        max-width: 350px;
       }
       .btn-responsive {
         padding: 10px 20px;
         font-size: 1.1rem;
+      }
+    }
+    
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+      .button-container {
+        top: 25px;
+        max-width: 380px;
+      }
+      .btn-responsive {
+        padding: 12px 24px;
+        font-size: 1.2rem;
+      }
+    }
+    
+    @media screen and (min-width: 1025px) {
+      .button-container {
+        top: 30px;
+        max-width: 400px;
+      }
+      .btn-responsive {
+        padding: 14px 28px;
+        font-size: 1.3rem;
       }
     }
   </style>

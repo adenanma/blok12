@@ -73,6 +73,296 @@
       </div>
   </section>
 
+
+
+<!--GALLERY-->
+<div class="carousel-container">
+    <div class="carousel-main">
+        <img id="mainImage" src="https://media.npr.org/assets/img/2022/11/04/gettyimages-1183414292-1-_slide-30784f99ac10f059c242d37e91d05ead475854f4.jpg" alt="Gambar Utama">
+        <div class="carousel-info">
+            <button class="nav-button prev">&#10094;</button>
+            <button class="nav-button next">&#10095;</button>
+        </div>
+    </div>
+    <div class="thumbnail-slider">
+        <img class="thumbnail active" src="https://media.npr.org/assets/img/2022/11/04/gettyimages-1183414292-1-_slide-30784f99ac10f059c242d37e91d05ead475854f4.jpg" alt="Thumbnail 1">
+        <img class="thumbnail" src="https://catering-kvatric.hr/wp-content/uploads/2017/04/best-party-planner.jpg" alt="Thumbnail 2">
+        <img class="thumbnail" src="https://www.bowlero.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F6gvyj3hhelpa%2FKKYxLIOocHCwmdztRGUHa%2Fc8af708a7a912ca2b506c0c16fd2ffc2%2Fbirthday-party-group-pile-on.jpg&w=3840&q=75" alt="Thumbnail 3">
+        <img class="thumbnail" src="https://media.guestofaguest.com/t_article_content/gofg-media/2017/02/1/48420/screen_shot_2017-02-23_at_1.52.26_pm.png" alt="Thumbnail 4">
+        <img class="thumbnail" src="https://thesleepsite.co.uk/wp-content/uploads/2018/04/shutterstock_481937281.jpg" alt="Thumbnail 5">
+    </div>
+</div>
+
+<style>
+    .carousel-container {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: clamp(15px, 3vw, 30px);
+        box-sizing: border-box;
+        background: linear-gradient(135deg, #f3f4f6, #e5e7eb, #d1d5db);
+        border-radius: clamp(10px, 2vw, 20px);
+        box-shadow: 0 clamp(5px, 1vw, 15px) clamp(15px, 3vw, 30px) rgba(0,0,0,0.15);
+        transition: all 0.3s ease;
+    }
+    .carousel-main {
+        margin-bottom: clamp(15px, 3vw, 30px);
+        position: relative;
+        overflow: hidden;
+        border-radius: clamp(10px, 2vw, 20px);
+        box-shadow: 0 clamp(4px, 0.8vw, 8px) clamp(8px, 1.6vw, 16px) rgba(0,0,0,0.2);
+        aspect-ratio: 16 / 9;
+        transition: all 0.3s ease;
+    }
+    .carousel-main img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease, filter 0.5s ease;
+    }
+    .carousel-main:hover img {
+        transform: scale(1.05);
+        filter: brightness(1.1) contrast(1.05);
+    }
+    .thumbnail-slider {
+        display: flex;
+        justify-content: center;
+        gap: clamp(5px, 1vw, 10px);
+        flex-wrap: wrap;
+        transition: all 0.3s ease;
+    }
+    .thumbnail {
+        width: calc(20% - clamp(5px, 1vw, 10px));
+        max-width: 120px;
+        aspect-ratio: 1;
+        object-fit: cover;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: all 0.4s ease;
+        border-radius: clamp(5px, 1vw, 10px);
+        box-shadow: 0 clamp(2px, 0.4vw, 4px) clamp(4px, 0.8vw, 8px) rgba(0,0,0,0.15);
+        border: clamp(1px, 0.2vw, 2px) solid transparent;
+    }
+    .thumbnail:hover {
+        transform: translateY(clamp(-4px, -0.8vw, -8px)) scale(1.05);
+        opacity: 0.9;
+    }
+    .thumbnail.active {
+        opacity: 1;
+        border: clamp(1.5px, 0.3vw, 3px) solid #4f46e5;
+        box-shadow: 0 clamp(2px, 0.4vw, 4px) clamp(6px, 1.2vw, 12px) rgba(79, 70, 229, 0.5);
+    }
+    .carousel-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: clamp(7px, 1.5vw, 15px);
+        transition: all 0.3s ease;
+    }
+    .nav-button {
+        background: rgba(255,255,255,0.8);
+        border: none;
+        font-size: clamp(16px, 3vw, 24px);
+        width: clamp(35px, 6vw, 50px);
+        height: clamp(35px, 6vw, 50px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-radius: 50%;
+        color: #4f46e5;
+        box-shadow: 0 clamp(2px, 0.4vw, 4px) clamp(4px, 0.8vw, 8px) rgba(0,0,0,0.2);
+    }
+    .nav-button:hover {
+        background: #4f46e5;
+        color: white;
+        box-shadow: 0 clamp(3px, 0.6vw, 6px) clamp(6px, 1.2vw, 12px) rgba(79, 70, 229, 0.5);
+        transform: scale(1.05);
+    }
+    
+    @media (max-width: 768px) {
+        .carousel-container {
+            padding: clamp(10px, 2.5vw, 20px);
+        }
+        .thumbnail-slider {
+            gap: clamp(5px, 1.5vw, 10px);
+        }
+        .thumbnail {
+            width: calc(20% - clamp(5px, 1.5vw, 10px));
+            max-width: 90px;
+        }
+        .carousel-info {
+            padding: clamp(5px, 1.5vw, 10px);
+        }
+        .nav-button {
+            font-size: clamp(14px, 2.5vw, 20px);
+            width: clamp(30px, 5vw, 45px);
+            height: clamp(30px, 5vw, 45px);
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .carousel-container {
+            padding: clamp(8px, 2vw, 15px);
+        }
+        .carousel-main {
+            aspect-ratio: 4 / 3;
+        }
+        .thumbnail-slider {
+            gap: clamp(3px, 1vw, 8px);
+        }
+        .thumbnail {
+            width: calc(20% - clamp(3px, 1vw, 8px));
+            max-width: 70px;
+        }
+        .carousel-info {
+            padding: clamp(3px, 1vw, 8px);
+        }
+        .nav-button {
+            font-size: clamp(12px, 2vw, 18px);
+            width: clamp(25px, 4vw, 40px);
+            height: clamp(25px, 4vw, 40px);
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mainImage = document.getElementById('mainImage');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        let currentIndex = 0;
+
+        function updateCarousel(index) {
+            mainImage.src = thumbnails[index].src;
+            mainImage.alt = thumbnails[index].alt;
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            thumbnails[index].classList.add('active');
+            currentIndex = index;
+
+            mainImage.style.opacity = '0';
+            mainImage.style.transform = 'scale(0.98) rotate(-2deg)';
+            setTimeout(() => {
+                mainImage.style.opacity = '1';
+                mainImage.style.transform = 'scale(1) rotate(0deg)';
+            }, 50);
+        }
+
+        thumbnails.forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', function() {
+                updateCarousel(index);
+            });
+        });
+
+        prevButton.addEventListener('click', function() {
+            currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+            updateCarousel(currentIndex);
+        });
+
+        nextButton.addEventListener('click', function() {
+            currentIndex = (currentIndex + 1) % thumbnails.length;
+            updateCarousel(currentIndex);
+        });
+
+        function autoSlide() {
+            currentIndex = (currentIndex + 1) % thumbnails.length;
+            updateCarousel(currentIndex);
+        }
+
+        let slideInterval = setInterval(autoSlide, 5000);
+
+        const carouselContainer = document.querySelector('.carousel-container');
+        carouselContainer.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        carouselContainer.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(autoSlide, 5000);
+        });
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        mainImage.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        mainImage.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = window.innerWidth * 0.1;
+            if (touchStartX - touchEndX > swipeThreshold) {
+                nextButton.click();
+            }
+            if (touchEndX - touchStartX > swipeThreshold) {
+                prevButton.click();
+            }
+        }
+
+        mainImage.addEventListener('mousemove', (e) => {
+            if (window.innerWidth > 768) {
+                const { left, top, width, height } = mainImage.getBoundingClientRect();
+                const x = (e.clientX - left) / width - 0.5;
+                const y = (e.clientY - top) / height - 0.5;
+                
+                mainImage.style.transform = `perspective(1000px) rotateY(${x * 5}deg) rotateX(${y * -5}deg) scale3d(1.05, 1.05, 1.05)`;
+            }
+        });
+
+        mainImage.addEventListener('mouseleave', () => {
+            mainImage.style.transform = 'perspective(1000px) rotateY(0) rotateX(0) scale3d(1, 1, 1)';
+        });
+
+        function adjustForLandscape() {
+            if (window.innerWidth < 768 && window.innerWidth > window.innerHeight) {
+                document.querySelector('.carousel-main').style.aspectRatio = '16 / 9';
+                document.querySelector('.thumbnail-slider').style.flexWrap = 'nowrap';
+                document.querySelector('.thumbnail-slider').style.overflowX = 'auto';
+                document.querySelector('.thumbnail-slider').style.justifyContent = 'flex-start';
+                document.querySelectorAll('.thumbnail').forEach(thumb => {
+                    thumb.style.flexShrink = '0';
+                    thumb.style.width = 'clamp(50px, 15vw, 80px)';
+                });
+            } else {
+                document.querySelector('.carousel-main').style.aspectRatio = '';
+                document.querySelector('.thumbnail-slider').style.flexWrap = 'wrap';
+                document.querySelector('.thumbnail-slider').style.overflowX = 'visible';
+                document.querySelector('.thumbnail-slider').style.justifyContent = 'center';
+                document.querySelectorAll('.thumbnail').forEach(thumb => {
+                    thumb.style.flexShrink = '';
+                    thumb.style.width = '';
+                });
+            }
+        }
+
+        window.addEventListener('resize', adjustForLandscape);
+        window.addEventListener('orientationchange', adjustForLandscape);
+        adjustForLandscape();
+
+        mainImage.style.opacity = '0';
+        mainImage.onload = function() {
+            mainImage.style.transition = 'opacity 0.5s ease';
+            mainImage.style.opacity = '1';
+        }
+    });
+</script>
+<!--END GALLERY-->
+
+
+
+
+
+
+<!--
   <style>
       #slid {
           width: 100%;
@@ -209,7 +499,7 @@ function prev() {
  slider.src = images[num];
 }
   </script>
-
+-->
     <!-- Kontak Section -->
     <section id="kontak" class="py-5">
         <div class="container">

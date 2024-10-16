@@ -238,9 +238,11 @@
                             <span class="label ${labelClass} mt-2 mt-sm-0">${labelText}</span>
                         </div>
                         <p class="agenda-description mt-3">${item.description}</p>
+                        ${daysDiff >= 0 ? `
                         <a href="https://wa.me/${item.contact}" target="_blank" class="btn btn-success mt-2 w-100">
                             <i class="fab fa-whatsapp me-2"></i>Hubungi Ketua
                         </a>
+                        ` : ''}
                     </div>
                 `;
 

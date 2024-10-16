@@ -65,6 +65,10 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+        .label-new {
+            background-color: #d0ff00;
+            color: #d00707;
+        }
         .label-upcoming {
             background-color: #ffffff;
             color: #d00707;
@@ -146,34 +150,39 @@
     <script>
         const agendaItems = [
             {
-                date: '2024-11-15',
+                date: '2024-10-17',
                 title: 'Gowes Pagi Bersama',
                 description: 'Bersepeda keliling kompleks perumahan untuk meningkatkan kebugaran dan keakraban antar warga.',
-                icon: 'fas fa-bicycle'
+                icon: 'fas fa-bicycle',
+                contact: '+6281234567890'
             },
             {
                 date: '2024-12-22',
                 title: 'Kelas Seni Lukis',
                 description: 'Belajar teknik melukis dasar bersama instruktur profesional di aula perumahan.',
-                icon: 'fas fa-paint-brush'
+                icon: 'fas fa-paint-brush',
+                contact: '+6289876543210'
             },
             {
                 date: '2024-08-05',
                 title: 'Hiking ke Gunung Gede',
                 description: 'Petualangan mendaki gunung untuk menikmati keindahan alam dan mempererat persaudaraan.',
-                icon: 'fas fa-mountain'
+                icon: 'fas fa-mountain',
+                contact: '+6285678901234'
             },
             {
                 date: '2024-08-12',
                 title: 'Kursus Bahasa Inggris',
                 description: 'Pelatihan bahasa Inggris praktis untuk meningkatkan kemampuan komunikasi internasional warga.',
-                icon: 'fas fa-language'
+                icon: 'fas fa-language',
+                contact: '+6282345678901'
             },
             {
                 date: '2024-08-26',
                 title: 'Pameran Seni Warga',
                 description: 'Menampilkan karya seni dari warga Blok 12 di galeri komunitas.',
-                icon: 'fas fa-palette'
+                icon: 'fas fa-palette',
+                contact: '+6287890123456'
             }
         ];
 
@@ -181,7 +190,6 @@
             const container = document.getElementById('agenda-container');
             const now = new Date();
 
-            // Urutkan agenda berdasarkan tanggal, yang akan datang di paling atas
             agendaItems.sort((a, b) => {
                 const dateA = new Date(a.date);
                 const dateB = new Date(b.date);
@@ -196,7 +204,7 @@
                 }
             });
 
-            container.innerHTML = ''; // Bersihkan container sebelum menambahkan item baru
+            container.innerHTML = '';
 
             agendaItems.forEach(item => {
                 const itemDate = new Date(item.date);
@@ -221,14 +229,18 @@
                 agendaItem.className = 'col-12 col-sm-6 col-lg-4 mb-4';
                 agendaItem.innerHTML = `
                     <div class="agenda-item h-100 ${labelClass}">
-                        <div class="d-flex align-items-center">
-                            <i class="${item.icon} agenda-icon"></i>
-                            <div>
+                        <div class="d-flex align-items-center flex-wrap">
+                            <i class="${item.icon} agenda-icon me-3"></i>
+                            <div class="flex-grow-1">
                                 <p class="agenda-date mb-0">${itemDate.toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
-                                <h3 class="agenda-title">${item.title} <span class="label ${labelClass}">${labelText}</span></h3>
+                                <h3 class="agenda-title">${item.title}</h3>
                             </div>
+                            <span class="label ${labelClass} mt-2 mt-sm-0">${labelText}</span>
                         </div>
                         <p class="agenda-description mt-3">${item.description}</p>
+                        <a href="https://wa.me/${item.contact}" target="_blank" class="btn btn-success mt-2 w-100">
+                            <i class="fab fa-whatsapp me-2"></i>Hubungi Ketua
+                        </a>
                     </div>
                 `;
 
@@ -236,19 +248,87 @@
             });
         }
 
-        // Panggil fungsi untuk merender agenda
         renderAgendaItems();
 
-        // Fungsi untuk memperbarui agenda setiap menit
         function updateAgenda() {
             renderAgendaItems();
         }
 
-        // Perbarui agenda setiap menit
-        setInterval(updateAgenda, 10000);
+        setInterval(updateAgenda, 60000);
 
-        // Tambahkan event listener untuk perubahan ukuran layar
         window.addEventListener('resize', renderAgendaItems);
+
+        const style = document.createElement('style');
+        style.textContent = `
+            .agenda-item {
+                transition: all 0.3s ease;
+            }
+            @media (max-width: 575.98px) {
+                .agenda-item {
+                    padding: 15px;
+                }
+                .agenda-icon {
+                    font-size: 1.5rem;
+                }
+                .agenda-title {
+                    font-size: 1.1rem;
+                }
+                .agenda-description {
+                    font-size: 0.9rem;
+                }
+                .label {
+                    font-size: 0.7rem;
+                    padding: 2px 6px;
+                }
+            }
+            @media (min-width: 576px) and (max-width: 767.98px) {
+                .agenda-item {
+                    padding: 18px;
+                }
+                .agenda-icon {
+                    font-size: 1.7rem;
+                }
+                .agenda-title {
+                    font-size: 1.2rem;
+                }
+                .agenda-description {
+                    font-size: 0.95rem;
+                }
+                .label {
+                    font-size: 0.75rem;
+                    padding: 3px 8px;
+                }
+            }
+            @media (min-width: 768px) and (max-width: 991.98px) {
+                .agenda-item {
+                    padding: 20px;
+                }
+                .agenda-icon {
+                    font-size: 1.8rem;
+                }
+                .agenda-title {
+                    font-size: 1.3rem;
+                }
+                .label {
+                    font-size: 0.8rem;
+                }
+            }
+            @media (min-width: 992px) {
+                .agenda-item {
+                    padding: 25px;
+                }
+                .agenda-icon {
+                    font-size: 2rem;
+                }
+                .agenda-title {
+                    font-size: 1.4rem;
+                }
+                .label {
+                    font-size: 0.85rem;
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>

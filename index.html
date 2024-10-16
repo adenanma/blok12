@@ -302,25 +302,7 @@
                     currentPosition = Math.max(Math.min(currentPosition, 0), maxPosition);
                     updateSliderPosition();
                 });
-    
-                // Auto-slide functionality
-                let autoSlideInterval;
-    
-                function startAutoSlide() {
-                    autoSlideInterval = setInterval(() => {
-                        moveSlider('next');
-                    }, 5000); // Change slide every 5 seconds
-                }
-    
-                function stopAutoSlide() {
-                    clearInterval(autoSlideInterval);
-                }
-    
-                startAutoSlide();
-    
-                // Pause auto-slide on hover
-                slider.addEventListener('mouseenter', stopAutoSlide);
-                slider.addEventListener('mouseleave', startAutoSlide);
+                
             });
         </script>
         <!--AKHIR NEWS SECTION-->
@@ -340,7 +322,7 @@
 
     <style>
         .hero {
-            background-image: url('img/hero-bg.jpg');
+            background-image: url('img/logo.jpeg');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -353,7 +335,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.574), rgba(74, 65, 65, 0.579));
+            /*background: linear-gradient(45deg, rgba(255, 255, 255, 0.574), rgba(74, 65, 65, 0.579));*/
             z-index: 1;
         }
         
@@ -385,8 +367,8 @@
         }
         
         .btn-hero {
-            background-color: #ffffff6a;
-            color: #000000;
+            background-color: #000000;
+            color: #ffffff;
         }
         
         .btn-hero:hover {
@@ -395,14 +377,13 @@
         }
         
         .btn-hero-outline {
-            background-color: transparent;
-            color: #ffffff;
-            border: 2px solid #ffffff;
+            background-color: #000000;
+            color: #fdfdfd;
         }
         
         .btn-hero-outline:hover {
-            background-color: #ffffff;
-            color: #000000;
+            background-color: #000000;
+            color: #ffffff;
             transform: translateY(-3px);
         }
         

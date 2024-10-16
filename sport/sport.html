@@ -78,18 +78,24 @@
 <!--GALLERY-->
 <div class="carousel-container">
     <div class="carousel-main">
-        <img id="mainImage" src="https://media.npr.org/assets/img/2022/11/04/gettyimages-1183414292-1-_slide-30784f99ac10f059c242d37e91d05ead475854f4.jpg" alt="Gambar Utama">
+        <img id="mainImage" src="sport.jpeg" alt="Gambar Utama">
         <div class="carousel-info">
             <button class="nav-button prev">&#10094;</button>
             <button class="nav-button next">&#10095;</button>
         </div>
     </div>
-    <div class="thumbnail-slider">
+    <div class="thumbnail-slider" style="display:none">
         <img class="thumbnail active" src="https://media.npr.org/assets/img/2022/11/04/gettyimages-1183414292-1-_slide-30784f99ac10f059c242d37e91d05ead475854f4.jpg" alt="Thumbnail 1">
         <img class="thumbnail" src="https://catering-kvatric.hr/wp-content/uploads/2017/04/best-party-planner.jpg" alt="Thumbnail 2">
         <img class="thumbnail" src="https://www.bowlero.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F6gvyj3hhelpa%2FKKYxLIOocHCwmdztRGUHa%2Fc8af708a7a912ca2b506c0c16fd2ffc2%2Fbirthday-party-group-pile-on.jpg&w=3840&q=75" alt="Thumbnail 3">
         <img class="thumbnail" src="https://media.guestofaguest.com/t_article_content/gofg-media/2017/02/1/48420/screen_shot_2017-02-23_at_1.52.26_pm.png" alt="Thumbnail 4">
         <img class="thumbnail" src="https://thesleepsite.co.uk/wp-content/uploads/2018/04/shutterstock_481937281.jpg" alt="Thumbnail 5">
+        <img class="thumbnail active" src="https://media.npr.org/assets/img/2022/11/04/gettyimages-1183414292-1-_slide-30784f99ac10f059c242d37e91d05ead475854f4.jpg" alt="Thumbnail 1">
+        <img class="thumbnail" src="https://catering-kvatric.hr/wp-content/uploads/2017/04/best-party-planner.jpg" alt="Thumbnail 2">
+        <img class="thumbnail" src="https://www.bowlero.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F6gvyj3hhelpa%2FKKYxLIOocHCwmdztRGUHa%2Fc8af708a7a912ca2b506c0c16fd2ffc2%2Fbirthday-party-group-pile-on.jpg&w=3840&q=75" alt="Thumbnail 3">
+        <img class="thumbnail" src="https://media.guestofaguest.com/t_article_content/gofg-media/2017/02/1/48420/screen_shot_2017-02-23_at_1.52.26_pm.png" alt="Thumbnail 4">
+        <img class="thumbnail" src="https://thesleepsite.co.uk/wp-content/uploads/2018/04/shutterstock_481937281.jpg" alt="Thumbnail 5">
+        
     </div>
 </div>
 
@@ -166,9 +172,9 @@
     .nav-button {
         background: rgba(255,255,255,0.8);
         border: none;
-        font-size: clamp(16px, 3vw, 24px);
-        width: clamp(35px, 6vw, 50px);
-        height: clamp(35px, 6vw, 50px);
+        font-size: clamp(24px, 5vw, 36px);
+        width: clamp(50px, 10vw, 80px);
+        height: clamp(50px, 10vw, 80px);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -176,13 +182,27 @@
         transition: all 0.3s ease;
         border-radius: 50%;
         color: #4f46e5;
-        box-shadow: 0 clamp(2px, 0.4vw, 4px) clamp(4px, 0.8vw, 8px) rgba(0,0,0,0.2);
+        box-shadow: 0 clamp(4px, 0.8vw, 8px) clamp(8px, 1.6vw, 16px) rgba(0,0,0,0.2);
     }
     .nav-button:hover {
         background: #4f46e5;
         color: white;
-        box-shadow: 0 clamp(3px, 0.6vw, 6px) clamp(6px, 1.2vw, 12px) rgba(79, 70, 229, 0.5);
-        transform: scale(1.05);
+        box-shadow: 0 clamp(5px, 1vw, 10px) clamp(10px, 2vw, 20px) rgba(79, 70, 229, 0.5);
+        transform: scale(1.15);
+    }
+    @media (max-width: 768px) {
+        .nav-button {
+            font-size: clamp(20px, 4vw, 30px);
+            width: clamp(40px, 8vw, 70px);
+            height: clamp(40px, 8vw, 70px);
+        }
+    }
+    @media (max-width: 480px) {
+        .nav-button {
+            font-size: clamp(16px, 3vw, 24px);
+            width: clamp(35px, 7vw, 60px);
+            height: clamp(35px, 7vw, 60px);
+        }
     }
     
     @media (max-width: 768px) {
@@ -270,25 +290,6 @@
             updateCarousel(currentIndex);
         });
 
-        function autoSlide() {
-            currentIndex = (currentIndex + 1) % thumbnails.length;
-            updateCarousel(currentIndex);
-        }
-
-        let slideInterval = setInterval(autoSlide, 5000);
-
-        const carouselContainer = document.querySelector('.carousel-container');
-        carouselContainer.addEventListener('mouseenter', () => {
-            clearInterval(slideInterval);
-        });
-
-        carouselContainer.addEventListener('mouseleave', () => {
-            slideInterval = setInterval(autoSlide, 5000);
-        });
-
-        let touchStartX = 0;
-        let touchEndX = 0;
-
         mainImage.addEventListener('touchstart', e => {
             touchStartX = e.changedTouches[0].screenX;
         });
@@ -348,7 +349,7 @@
         window.addEventListener('orientationchange', adjustForLandscape);
         adjustForLandscape();
 
-        mainImage.style.opacity = '0';
+        mainImage.style.opacity = '100';
         mainImage.onload = function() {
             mainImage.style.transition = 'opacity 0.5s ease';
             mainImage.style.opacity = '1';
@@ -359,147 +360,6 @@
 
 
 
-
-
-
-<!--
-  <style>
-      #slid {
-          width: 100%;
-          max-width: 1000px;
-          margin: 0 auto;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-          border-radius: 15px;
-          overflow: hidden;
-      }
-      .img-div {
-          position: relative;
-          width: 100%;
-          padding-top: 56.25%; /* Rasio aspek 16:9 */
-          background-color: #f0f0f0;
-      }
-      .image {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          transition: transform 0.5s ease;
-      }
-      #slider {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-      }
-      .butt {
-          display: flex;
-          justify-content: center;
-          margin-top: 20px;
-      }
-      .butt button {
-          padding: 15px 30px;
-          margin: 0 15px;
-          font-size: 18px;
-          background-color: #007bff;
-          color: white;
-          border: none;
-          border-radius: 50px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: 0 5px 15px rgba(0,123,255,0.3);
-      }
-      .butt button:hover {
-          background-color: #0056b3;
-          transform: translateY(-3px);
-          box-shadow: 0 8px 20px rgba(0,86,179,0.4);
-      }
-      .butt button:active {
-          transform: translateY(1px);
-      }
-      @media (max-width: 1200px) {
-          #slid {
-              max-width: 90%;
-          }
-      }
-      @media (max-width: 992px) {
-          .butt button {
-              padding: 12px 24px;
-              font-size: 16px;
-          }
-      }
-      @media (max-width: 768px) {
-          #slid {
-              max-width: 95%;
-          }
-          .butt button {
-              padding: 10px 20px;
-              font-size: 14px;
-              margin: 0 10px;
-          }
-      }
-      @media (max-width: 576px) {
-          .img-div {
-              padding-top: 75%; /* Rasio aspek 4:3 untuk layar kecil */
-          }
-          .butt button {
-              padding: 8px 16px;
-              font-size: 12px;
-              margin: 0 5px;
-          }
-      }
-      @media (max-width: 400px) {
-          .butt {
-              flex-direction: column;
-              align-items: center;
-          }
-          .butt button {
-              margin: 10px 0;
-              width: 80%;
-          }
-      }
-  </style>
-  <div id="slid">
-      <div class="img-div">
-          <div class="image"> 
-              <img id="slider" src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Slider Image">
-          </div>
-      </div>
-  </div>
-  <div class="butt">
-      <button onclick="prev()">Sebelumnya</button>
-      <button onclick="next()">Selanjutnya</button>
-  </div>
-  <script>
-    var images = [
-  "https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-  "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-  "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
-  "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-  "https://images.unsplash.com/photo-1530549387789-4c1017266635?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-  "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-
- ];
-var num = 0;
-
-function next() {
- var slider = document.getElementById("slider");
- num++;
- if(num >= images.length) {
-   num = 0;
- }
- slider.src = images[num];
- }
-
-function prev() {
- var slider = document.getElementById("slider");
- num--;
- if(num < 0) {
-   num = images.length-1;
- }
- slider.src = images[num];
-}
-  </script>
--->
     <!-- Kontak Section -->
     <section id="kontak" class="py-5">
         <div class="container">

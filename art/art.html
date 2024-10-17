@@ -42,7 +42,22 @@
                         <a class="nav-link" href="#kegiatan">MOMENT KAMI</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#agenda">AGENDA KAMI</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#kontak">PESAN UNTUK KAMI</a>
+                    </li>
+                    <li class="nav-item dropdown"></li>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-activity"></i> KEGIATAN KAMI
+                        </a>
+                        <ul class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../sport/sport.html"><i class="bi bi-trophy"></i> GO!!!BLOK SPORTS</a></li>
+                            <li><a class="dropdown-item" href="../art/art.html"><i class="bi bi-palette"></i> GO!!!BLOK ART</a></li>
+                            <li><a class="dropdown-item" href="../gowes/gowes.html"><i class="bi bi-bicycle"></i> GO!!!BLOK GOWES</a></li>
+                            <li><a class="dropdown-item" href="../adventure/adventure.html"><i class="bi bi-compass"></i> GO!!!BLOK ADVENTURE</a></li>
+                            <li><a class="dropdown-item" href="../class/class.html"><i class="bi bi-book"></i> GO!!!BLOK CLASS</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -67,146 +82,481 @@
         </div>
     </section>
 
-    <!-- Galeri Kegiatan -->
-    <section id="kegiatan" class="py-5">
-      <div class="container">
-          <h2 class="text-center mt-4 mb-md-5 fw-bold" data-aos="fade-up">MOMENT KAMI</h2>
-      </div>
-  </section>
+<!-- JUDUL GALLERY KEGIATAN -->
+<section id="moment" class="py-5">
+    <div class="container">
+        <h2 class="text-center mt-4 mb-md-5 fw-bold" data-aos="fade-up">MOMENT KAMI</h2>
+    </div>
+</section>
 
-  <style>
-      #slid {
-          width: 100%;
-          max-width: 1000px;
-          margin: 0 auto;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-          border-radius: 15px;
-          overflow: hidden;
-      }
-      .img-div {
-          position: relative;
-          width: 100%;
-          padding-top: 56.25%; /* Rasio aspek 16:9 */
-          background-color: #f0f0f0;
-      }
-      .image {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          transition: transform 0.5s ease;
-      }
-      #slider {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-      }
-      .butt {
-          display: flex;
-          justify-content: center;
-          margin-top: 20px;
-      }
-      .butt button {
-          padding: 15px 30px;
-          margin: 0 15px;
-          font-size: 18px;
-          background-color: #007bff;
-          color: white;
-          border: none;
-          border-radius: 50px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: 0 5px 15px rgba(0,123,255,0.3);
-      }
-      .butt button:hover {
-          background-color: #0056b3;
-          transform: translateY(-3px);
-          box-shadow: 0 8px 20px rgba(0,86,179,0.4);
-      }
-      .butt button:active {
-          transform: translateY(1px);
-      }
-      @media (max-width: 1200px) {
-          #slid {
-              max-width: 90%;
-          }
-      }
-      @media (max-width: 992px) {
-          .butt button {
-              padding: 12px 24px;
-              font-size: 16px;
-          }
-      }
-      @media (max-width: 768px) {
-          #slid {
-              max-width: 95%;
-          }
-          .butt button {
-              padding: 10px 20px;
-              font-size: 14px;
-              margin: 0 10px;
-          }
-      }
-      @media (max-width: 576px) {
-          .img-div {
-              padding-top: 75%; /* Rasio aspek 4:3 untuk layar kecil */
-          }
-          .butt button {
-              padding: 8px 16px;
-              font-size: 12px;
-              margin: 0 5px;
-          }
-      }
-      @media (max-width: 400px) {
-          .butt {
-              flex-direction: column;
-              align-items: center;
-          }
-          .butt button {
-              margin: 10px 0;
-              width: 80%;
-          }
-      }
-  </style>
-  <div id="slid">
-      <div class="img-div">
-          <div class="image"> 
-              <img id="slider" src="https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Slider Image">
-          </div>
+<div class="carousel-container">
+  <div class="carousel-main">
+      <img id="mainImage" src="art.jpeg" alt="Gambar Utama">
+      <div class="carousel-info">
+          <button class="nav-button prev">&#10094;</button>
+          <button class="nav-button next">&#10095;</button>
       </div>
   </div>
-  <div class="butt">
-      <button onclick="prev()">Sebelumnya</button>
-      <button onclick="next()">Selanjutnya</button>
+  <div class="thumbnail-slider" style="display:none">
+      <img class="thumbnail active" src="https://media.npr.org/assets/img/2022/11/04/gettyimages-1183414292-1-_slide-30784f99ac10f059c242d37e91d05ead475854f4.jpg" alt="Thumbnail 1">
+      <img class="thumbnail" src="https://catering-kvatric.hr/wp-content/uploads/2017/04/best-party-planner.jpg" alt="Thumbnail 2">
+      <img class="thumbnail" src="https://www.bowlero.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F6gvyj3hhelpa%2FKKYxLIOocHCwmdztRGUHa%2Fc8af708a7a912ca2b506c0c16fd2ffc2%2Fbirthday-party-group-pile-on.jpg&w=3840&q=75" alt="Thumbnail 3">
+      <img class="thumbnail" src="https://media.guestofaguest.com/t_article_content/gofg-media/2017/02/1/48420/screen_shot_2017-02-23_at_1.52.26_pm.png" alt="Thumbnail 4">
+      <img class="thumbnail" src="https://thesleepsite.co.uk/wp-content/uploads/2018/04/shutterstock_481937281.jpg" alt="Thumbnail 5">
+      <img class="thumbnail active" src="https://media.npr.org/assets/img/2022/11/04/gettyimages-1183414292-1-_slide-30784f99ac10f059c242d37e91d05ead475854f4.jpg" alt="Thumbnail 1">
+      <img class="thumbnail" src="https://catering-kvatric.hr/wp-content/uploads/2017/04/best-party-planner.jpg" alt="Thumbnail 2">
+      <img class="thumbnail" src="https://www.bowlero.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F6gvyj3hhelpa%2FKKYxLIOocHCwmdztRGUHa%2Fc8af708a7a912ca2b506c0c16fd2ffc2%2Fbirthday-party-group-pile-on.jpg&w=3840&q=75" alt="Thumbnail 3">
+      <img class="thumbnail" src="https://media.guestofaguest.com/t_article_content/gofg-media/2017/02/1/48420/screen_shot_2017-02-23_at_1.52.26_pm.png" alt="Thumbnail 4">
+      <img class="thumbnail" src="https://thesleepsite.co.uk/wp-content/uploads/2018/04/shutterstock_481937281.jpg" alt="Thumbnail 5">
+      
   </div>
-  <script>
-    var images = [
-  "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-  "https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
-  "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-  "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
- ];
-var num = 0;
+</div>
 
-function next() {
- var slider = document.getElementById("slider");
- num++;
- if(num >= images.length) {
-   num = 0;
- }
- slider.src = images[num];
- }
+<style>
+  .carousel-container {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: clamp(15px, 3vw, 30px);
+      box-sizing: border-box;
+      background: linear-gradient(135deg, #f3f4f6, #e5e7eb, #d1d5db);
+      border-radius: clamp(10px, 2vw, 20px);
+      box-shadow: 0 clamp(5px, 1vw, 15px) clamp(15px, 3vw, 30px) rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+  }
+  .carousel-main {
+      margin-bottom: clamp(15px, 3vw, 30px);
+      position: relative;
+      overflow: hidden;
+      border-radius: clamp(10px, 2vw, 20px);
+      box-shadow: 0 clamp(4px, 0.8vw, 8px) clamp(8px, 1.6vw, 16px) rgba(0,0,0,0.2);
+      aspect-ratio: 16 / 9;
+      transition: all 0.3s ease;
+  }
+  .carousel-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease, filter 0.5s ease;
+  }
+  .carousel-main:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.1) contrast(1.05);
+  }
+  .thumbnail-slider {
+      display: flex;
+      justify-content: center;
+      gap: clamp(5px, 1vw, 10px);
+      flex-wrap: wrap;
+      transition: all 0.3s ease;
+  }
+  .thumbnail {
+      width: calc(20% - clamp(5px, 1vw, 10px));
+      max-width: 120px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: all 0.4s ease;
+      border-radius: clamp(5px, 1vw, 10px);
+      box-shadow: 0 clamp(2px, 0.4vw, 4px) clamp(4px, 0.8vw, 8px) rgba(0,0,0,0.15);
+      border: clamp(1px, 0.2vw, 2px) solid transparent;
+  }
+  .thumbnail:hover {
+      transform: translateY(clamp(-4px, -0.8vw, -8px)) scale(1.05);
+      opacity: 0.9;
+  }
+  .thumbnail.active {
+      opacity: 1;
+      border: clamp(1.5px, 0.3vw, 3px) solid #4f46e5;
+      box-shadow: 0 clamp(2px, 0.4vw, 4px) clamp(6px, 1.2vw, 12px) rgba(79, 70, 229, 0.5);
+  }
+  .carousel-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: clamp(7px, 1.5vw, 15px);
+      transition: all 0.3s ease;
+  }
+  .nav-button {
+      background: rgba(255,255,255,0.8);
+      border: none;
+      font-size: clamp(24px, 5vw, 36px);
+      width: clamp(50px, 10vw, 80px);
+      height: clamp(50px, 10vw, 80px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 50%;
+      color: #4f46e5;
+      box-shadow: 0 clamp(4px, 0.8vw, 8px) clamp(8px, 1.6vw, 16px) rgba(0,0,0,0.2);
+  }
+  .nav-button:hover {
+      background: #4f46e5;
+      color: white;
+      box-shadow: 0 clamp(5px, 1vw, 10px) clamp(10px, 2vw, 20px) rgba(79, 70, 229, 0.5);
+      transform: scale(1.15);
+  }
+  @media (max-width: 768px) {
+      .nav-button {
+          font-size: clamp(20px, 4vw, 30px);
+          width: clamp(40px, 8vw, 70px);
+          height: clamp(40px, 8vw, 70px);
+      }
+  }
+  @media (max-width: 480px) {
+      .nav-button {
+          font-size: clamp(16px, 3vw, 24px);
+          width: clamp(35px, 7vw, 60px);
+          height: clamp(35px, 7vw, 60px);
+      }
+  }
+  
+  @media (max-width: 768px) {
+      .carousel-container {
+          padding: clamp(10px, 2.5vw, 20px);
+      }
+      .thumbnail-slider {
+          gap: clamp(5px, 1.5vw, 10px);
+      }
+      .thumbnail {
+          width: calc(20% - clamp(5px, 1.5vw, 10px));
+          max-width: 90px;
+      }
+      .carousel-info {
+          padding: clamp(5px, 1.5vw, 10px);
+      }
+      .nav-button {
+          font-size: clamp(14px, 2.5vw, 20px);
+          width: clamp(30px, 5vw, 45px);
+          height: clamp(30px, 5vw, 45px);
+      }
+  }
+  
+  @media (max-width: 480px) {
+      .carousel-container {
+          padding: clamp(8px, 2vw, 15px);
+      }
+      .carousel-main {
+          aspect-ratio: 4 / 3;
+      }
+      .thumbnail-slider {
+          gap: clamp(3px, 1vw, 8px);
+      }
+      .thumbnail {
+          width: calc(20% - clamp(3px, 1vw, 8px));
+          max-width: 70px;
+      }
+      .carousel-info {
+          padding: clamp(3px, 1vw, 8px);
+      }
+      .nav-button {
+          font-size: clamp(12px, 2vw, 18px);
+          width: clamp(25px, 4vw, 40px);
+          height: clamp(25px, 4vw, 40px);
+      }
+  }
+</style>
 
-function prev() {
- var slider = document.getElementById("slider");
- num--;
- if(num < 0) {
-   num = images.length-1;
- }
- slider.src = images[num];
-}
-  </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const mainImage = document.getElementById('mainImage');
+      const thumbnails = document.querySelectorAll('.thumbnail');
+      const prevButton = document.querySelector('.prev');
+      const nextButton = document.querySelector('.next');
+      let currentIndex = 0;
+
+      function updateCarousel(index) {
+          mainImage.src = thumbnails[index].src;
+          mainImage.alt = thumbnails[index].alt;
+          thumbnails.forEach(thumb => thumb.classList.remove('active'));
+          thumbnails[index].classList.add('active');
+          currentIndex = index;
+
+          mainImage.style.opacity = '0';
+          mainImage.style.transform = 'scale(0.98) rotate(-2deg)';
+          setTimeout(() => {
+              mainImage.style.opacity = '1';
+              mainImage.style.transform = 'scale(1) rotate(0deg)';
+          }, 50);
+      }
+
+      thumbnails.forEach((thumbnail, index) => {
+          thumbnail.addEventListener('click', function() {
+              updateCarousel(index);
+          });
+      });
+
+      prevButton.addEventListener('click', function() {
+          currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+          updateCarousel(currentIndex);
+      });
+
+      nextButton.addEventListener('click', function() {
+          currentIndex = (currentIndex + 1) % thumbnails.length;
+          updateCarousel(currentIndex);
+      });
+
+      mainImage.addEventListener('touchstart', e => {
+          touchStartX = e.changedTouches[0].screenX;
+      });
+
+      mainImage.addEventListener('touchend', e => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+      });
+
+      function handleSwipe() {
+          const swipeThreshold = window.innerWidth * 0.1;
+          if (touchStartX - touchEndX > swipeThreshold) {
+              nextButton.click();
+          }
+          if (touchEndX - touchStartX > swipeThreshold) {
+              prevButton.click();
+          }
+      }
+
+      mainImage.addEventListener('mousemove', (e) => {
+          if (window.innerWidth > 768) {
+              const { left, top, width, height } = mainImage.getBoundingClientRect();
+              const x = (e.clientX - left) / width - 0.5;
+              const y = (e.clientY - top) / height - 0.5;
+              
+              mainImage.style.transform = `perspective(1000px) rotateY(${x * 5}deg) rotateX(${y * -5}deg) scale3d(1.05, 1.05, 1.05)`;
+          }
+      });
+
+      mainImage.addEventListener('mouseleave', () => {
+          mainImage.style.transform = 'perspective(1000px) rotateY(0) rotateX(0) scale3d(1, 1, 1)';
+      });
+
+      function adjustForLandscape() {
+          if (window.innerWidth < 768 && window.innerWidth > window.innerHeight) {
+              document.querySelector('.carousel-main').style.aspectRatio = '16 / 9';
+              document.querySelector('.thumbnail-slider').style.flexWrap = 'nowrap';
+              document.querySelector('.thumbnail-slider').style.overflowX = 'auto';
+              document.querySelector('.thumbnail-slider').style.justifyContent = 'flex-start';
+              document.querySelectorAll('.thumbnail').forEach(thumb => {
+                  thumb.style.flexShrink = '0';
+                  thumb.style.width = 'clamp(50px, 15vw, 80px)';
+              });
+          } else {
+              document.querySelector('.carousel-main').style.aspectRatio = '';
+              document.querySelector('.thumbnail-slider').style.flexWrap = 'wrap';
+              document.querySelector('.thumbnail-slider').style.overflowX = 'visible';
+              document.querySelector('.thumbnail-slider').style.justifyContent = 'center';
+              document.querySelectorAll('.thumbnail').forEach(thumb => {
+                  thumb.style.flexShrink = '';
+                  thumb.style.width = '';
+              });
+          }
+      }
+
+      window.addEventListener('resize', adjustForLandscape);
+      window.addEventListener('orientationchange', adjustForLandscape);
+      adjustForLandscape();
+
+      mainImage.style.opacity = '100';
+      mainImage.onload = function() {
+          mainImage.style.transition = 'opacity 0.5s ease';
+          mainImage.style.opacity = '1';
+      }
+  });
+</script>
+<!--END GALLERY KEGIATAN-->
+
+
+<!--AGENDA-->
+<section id="agenda" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">AGENDA ACARA</h2>
+        <button class="btn btn-outline-primary m-1 w-100 w-md-auto" id="toggleCardsBtn">Tampilkan Agenda</button>
+        <div class="mb-4 d-flex flex-wrap justify-content-center">
+            <button class="btn btn-outline-warning m-1" id="filterSegeraBtn">Segera</button>
+            <button class="btn btn-outline-info m-1" id="filterAkanDatangBtn">Akan Datang</button>
+            <button class="btn btn-outline-secondary m-1" id="filterSudahBerlaluBtn">Sudah Berlalu</button>
+        </div>
+        <div class="row" id="eventContainer">
+            <!-- Event cards will be dynamically inserted here -->
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const events = [
+            {
+                title: "Pertandingan Sepak Bola",
+                date: "2024-10-18",
+                time: "16:32 WIB",
+                location: "Stadion Utama",
+                description: "Final liga nasional antara tim A dan tim B.",
+                category: "Sepak Bola"
+            },
+            {
+                title: "Turnamen Bola Voli",
+                date: "2024-11-20",
+                time: "09:00 WIB",
+                location: "GOR Olahraga",
+                description: "Turnamen antar universitas dengan 16 tim peserta.",
+                category: "Bola Voli"
+            },
+            {
+                title: "Lomba Lari Marathon",
+                date: "2024-12-20",
+                time: "06:00 WIB",
+                location: "Alun-alun Kota",
+                description: "Marathon 42 km melintasi landmark kota.",
+                category: "Atletik"
+            },
+            {
+                title: "Kompetisi Renang",
+                date: "2024-08-12",
+                time: "10:00 WIB",
+                location: "Kolam Renang Olimpiade",
+                description: "Kompetisi renang nasional dengan berbagai kategori.",
+                category: "Renang"
+            }
+        ];
+
+        const eventContainer = document.getElementById('eventContainer');
+
+        function createEventCard(event) {
+            const eventDateTime = new Date(event.date + 'T' + event.time.split(' ')[0]);
+            const now = new Date();
+
+            let statusClass, statusText;
+            if (eventDateTime > now) {
+                const timeDiff = eventDateTime - now;
+                const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+                if (daysDiff === 0) {
+                    statusClass = 'bg-success';
+                    statusText = 'Hari Ini';
+                } else if (daysDiff <= 7) {
+                    statusClass = 'bg-warning';
+                    statusText = 'Segera';
+                } else {
+                    statusClass = 'bg-info';
+                    statusText = 'Akan Datang';
+                }
+            } else {
+                statusClass = 'bg-secondary';
+                statusText = 'Sudah Berlalu';
+            }
+
+            const card = document.createElement('div');
+            card.className = 'col-12 col-sm-6 col-lg-4 mb-4';
+            card.innerHTML = `
+                <div class="card h-100">
+                    <div class="card-header ${statusClass} text-white d-flex justify-content-between align-items-center">
+                        <span class="text-truncate">${event.category}</span>
+                        <span class="badge bg-light text-dark">${statusText}</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-truncate">${event.title}</h5>
+                        <p class="card-text"><i class="fas fa-calendar-alt"></i> Tanggal: ${formatDate(event.date)}</p>
+                        <p class="card-text"><i class="fas fa-clock"></i> Waktu: ${event.time}</p>
+                        <p class="card-text"><i class="fas fa-map-marker-alt"></i> Lokasi: ${event.location}</p>
+                        <p class="card-text text-truncate">${event.description}</p>
+                    </div>
+                    <div class="card-footer d-flex flex-column flex-sm-row justify-content-between">
+                        <a href="https://wa.me/6285172121407?text=Saya tertarik dengan acara ${encodeURIComponent(event.title)}. Bisakah Anda memberikan informasi lebih lanjut?" class="btn btn-success btn-sm flex-grow-1" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Hubungi Ketua
+                        </a>
+                    </div>
+                </div>
+            `;
+            return card;
+        }
+
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString('id-ID', options);
+        }
+
+        function renderEvents(filteredEvents) {
+            eventContainer.innerHTML = '';
+            filteredEvents.forEach(event => {
+                eventContainer.appendChild(createEventCard(event));
+            });
+            checkCardStatus();
+        }
+
+        renderEvents(events);
+
+        function filterEvents(filter) {
+            const now = new Date();
+
+            const filteredEvents = events.filter(event => {
+                const eventDateTime = new Date(event.date + 'T' + event.time.split(' ')[0]);
+                const timeDiff = eventDateTime - now;
+                const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+                switch(filter) {
+                    case 'hari-ini':
+                        return daysDiff === 0;
+                    case 'segera':
+                        return daysDiff > 0 && daysDiff <= 7;
+                    case 'akan-datang':
+                        return daysDiff > 7;
+                    case 'sudah-berlalu':
+                        return eventDateTime < now;
+                    default:
+                        return true;
+                }
+            });
+
+            renderEvents(filteredEvents);
+        }
+
+        // Fungsi untuk tombol toggle kartu
+        function toggleCards() {
+            const cards = document.querySelectorAll('.card');
+            const isHidden = localStorage.getItem('cardsHidden') === 'true';
+            cards.forEach(card => {
+                card.style.display = isHidden ? '' : 'none';
+            });
+            localStorage.setItem('cardsHidden', !isHidden);
+        }
+
+        // Fungsi untuk memeriksa status kartu saat halaman dimuat
+        function checkCardStatus() {
+            const isHidden = localStorage.getItem('cardsHidden') === 'true';
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.style.display = isHidden ? 'none' : '';
+            });
+        }
+
+        // Panggil fungsi untuk memeriksa status kartu saat halaman dimuat
+        checkCardStatus();
+
+        // Menambahkan event listener untuk tombol-tombol
+        document.getElementById('toggleCardsBtn').addEventListener('click', toggleCards);
+        document.getElementById('filterSegeraBtn').addEventListener('click', () => filterEvents('segera'));
+        document.getElementById('filterAkanDatangBtn').addEventListener('click', () => filterEvents('akan-datang'));
+        document.getElementById('filterSudahBerlaluBtn').addEventListener('click', () => filterEvents('sudah-berlalu'));
+
+        // Sembunyikan kartu saat halaman dimuat
+        localStorage.setItem('cardsHidden', 'true');
+        checkCardStatus();
+    });
+
+    function showEventDetails(eventTitle) {
+        // Implementasi untuk menampilkan detail acara
+        alert(`Detail acara untuk: ${eventTitle}`);
+        // Di sini Anda bisa menambahkan logika untuk menampilkan modal atau halaman detail acara
+    }
+</script>
+<!--END AGENDA-->
+
 
     <!-- Kontak Section -->
     <section id="kontak" class="py-5">

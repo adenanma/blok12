@@ -19,6 +19,7 @@
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
+    
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
@@ -26,7 +27,7 @@
                 <img src="sport.jpeg" alt="" height="30" class="d-inline-block align-top">
                 BLOK12 BROTHERHOOD
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -38,10 +39,25 @@
                         <a class="nav-link" href="#tentang">TENTANG KAMI</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#kegiatan">MOMENT KAMI</a>
+                        <a class="nav-link" href="#moment">MOMENT KAMI</a>
+                    </li>
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="#agenda">AGENDA KAMI</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#kontak">PESAN UNTUK KAMI</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-activity"></i> KEGIATAN KAMI
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../sport/sport.html"><i class="bi bi-trophy"></i> GO!!!BLOK SPORTS</a></li>
+                            <li><a class="dropdown-item" href="../art/art.html"><i class="bi bi-palette"></i> GO!!!BLOK ART</a></li>
+                            <li><a class="dropdown-item" href="../gowes/gowes.html"><i class="bi bi-bicycle"></i> GO!!!BLOK GOWES</a></li>
+                            <li><a class="dropdown-item" href="../adventure/adventure.html"><i class="bi bi-compass"></i> GO!!!BLOK ADVENTURE</a></li>
+                            <li><a class="dropdown-item" href="../class/class.html"><i class="bi bi-book"></i> GO!!!BLOK CLASS</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -66,14 +82,13 @@
         </div>
     </section>
 
-    <!-- Galeri Kegiatan -->
-    <section id="kegiatan" class="py-5">
+    
+    <!-- JUDUL GALLERY KEGIATAN -->
+    <section id="moment" class="py-5">
       <div class="container">
           <h2 class="text-center mt-4 mb-md-5 fw-bold" data-aos="fade-up">MOMENT KAMI</h2>
       </div>
   </section>
-
-
 
 <!--GALLERY-->
 <div class="carousel-container">
@@ -359,6 +374,191 @@
 <!--END GALLERY-->
 
 
+<!--AGENDA-->
+<section id="agenda" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">AGENDA ACARA</h2>
+        <button class="btn btn-outline-primary m-1 w-100 w-md-auto" id="toggleCardsBtn">Tampilkan Agenda</button>
+        <div class="mb-4 d-flex flex-wrap justify-content-center">
+            <button class="btn btn-outline-warning m-1" id="filterSegeraBtn">Segera</button>
+            <button class="btn btn-outline-info m-1" id="filterAkanDatangBtn">Akan Datang</button>
+            <button class="btn btn-outline-secondary m-1" id="filterSudahBerlaluBtn">Sudah Berlalu</button>
+        </div>
+        <div class="row" id="eventContainer">
+            <!-- Event cards will be dynamically inserted here -->
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const events = [
+            {
+                title: "Pertandingan Sepak Bola",
+                date: "2024-10-18",
+                time: "16:32 WIB",
+                location: "Stadion Utama",
+                description: "Final liga nasional antara tim A dan tim B.",
+                category: "Sepak Bola"
+            },
+            {
+                title: "Turnamen Bola Voli",
+                date: "2024-11-20",
+                time: "09:00 WIB",
+                location: "GOR Olahraga",
+                description: "Turnamen antar universitas dengan 16 tim peserta.",
+                category: "Bola Voli"
+            },
+            {
+                title: "Lomba Lari Marathon",
+                date: "2024-12-20",
+                time: "06:00 WIB",
+                location: "Alun-alun Kota",
+                description: "Marathon 42 km melintasi landmark kota.",
+                category: "Atletik"
+            },
+            {
+                title: "Kompetisi Renang",
+                date: "2024-08-12",
+                time: "10:00 WIB",
+                location: "Kolam Renang Olimpiade",
+                description: "Kompetisi renang nasional dengan berbagai kategori.",
+                category: "Renang"
+            }
+        ];
+
+        const eventContainer = document.getElementById('eventContainer');
+
+        function createEventCard(event) {
+            const eventDateTime = new Date(event.date + 'T' + event.time.split(' ')[0]);
+            const now = new Date();
+
+            let statusClass, statusText;
+            if (eventDateTime > now) {
+                const timeDiff = eventDateTime - now;
+                const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+                if (daysDiff === 0) {
+                    statusClass = 'bg-success';
+                    statusText = 'Hari Ini';
+                } else if (daysDiff <= 7) {
+                    statusClass = 'bg-warning';
+                    statusText = 'Segera';
+                } else {
+                    statusClass = 'bg-info';
+                    statusText = 'Akan Datang';
+                }
+            } else {
+                statusClass = 'bg-secondary';
+                statusText = 'Sudah Berlalu';
+            }
+
+            const card = document.createElement('div');
+            card.className = 'col-12 col-sm-6 col-lg-4 mb-4';
+            card.innerHTML = `
+                <div class="card h-100">
+                    <div class="card-header ${statusClass} text-white d-flex justify-content-between align-items-center">
+                        <span class="text-truncate">${event.category}</span>
+                        <span class="badge bg-light text-dark">${statusText}</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-truncate">${event.title}</h5>
+                        <p class="card-text"><i class="fas fa-calendar-alt"></i> Tanggal: ${formatDate(event.date)}</p>
+                        <p class="card-text"><i class="fas fa-clock"></i> Waktu: ${event.time}</p>
+                        <p class="card-text"><i class="fas fa-map-marker-alt"></i> Lokasi: ${event.location}</p>
+                        <p class="card-text text-truncate">${event.description}</p>
+                    </div>
+                    <div class="card-footer d-flex flex-column flex-sm-row justify-content-between">
+                        <a href="https://wa.me/6285172121407?text=Saya tertarik dengan acara ${encodeURIComponent(event.title)}. Bisakah Anda memberikan informasi lebih lanjut?" class="btn btn-success btn-sm flex-grow-1" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Hubungi Ketua
+                        </a>
+                    </div>
+                </div>
+            `;
+            return card;
+        }
+
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString('id-ID', options);
+        }
+
+        function renderEvents(filteredEvents) {
+            eventContainer.innerHTML = '';
+            filteredEvents.forEach(event => {
+                eventContainer.appendChild(createEventCard(event));
+            });
+            checkCardStatus();
+        }
+
+        renderEvents(events);
+
+        function filterEvents(filter) {
+            const now = new Date();
+
+            const filteredEvents = events.filter(event => {
+                const eventDateTime = new Date(event.date + 'T' + event.time.split(' ')[0]);
+                const timeDiff = eventDateTime - now;
+                const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+                switch(filter) {
+                    case 'hari-ini':
+                        return daysDiff === 0;
+                    case 'segera':
+                        return daysDiff > 0 && daysDiff <= 7;
+                    case 'akan-datang':
+                        return daysDiff > 7;
+                    case 'sudah-berlalu':
+                        return eventDateTime < now;
+                    default:
+                        return true;
+                }
+            });
+
+            renderEvents(filteredEvents);
+        }
+
+        // Fungsi untuk tombol toggle kartu
+        function toggleCards() {
+            const cards = document.querySelectorAll('.card');
+            const isHidden = localStorage.getItem('cardsHidden') === 'true';
+            cards.forEach(card => {
+                card.style.display = isHidden ? '' : 'none';
+            });
+            localStorage.setItem('cardsHidden', !isHidden);
+        }
+
+        // Fungsi untuk memeriksa status kartu saat halaman dimuat
+        function checkCardStatus() {
+            const isHidden = localStorage.getItem('cardsHidden') === 'true';
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.style.display = isHidden ? 'none' : '';
+            });
+        }
+
+        // Panggil fungsi untuk memeriksa status kartu saat halaman dimuat
+        checkCardStatus();
+
+        // Menambahkan event listener untuk tombol-tombol
+        document.getElementById('toggleCardsBtn').addEventListener('click', toggleCards);
+        document.getElementById('filterSegeraBtn').addEventListener('click', () => filterEvents('segera'));
+        document.getElementById('filterAkanDatangBtn').addEventListener('click', () => filterEvents('akan-datang'));
+        document.getElementById('filterSudahBerlaluBtn').addEventListener('click', () => filterEvents('sudah-berlalu'));
+
+        // Sembunyikan kartu saat halaman dimuat
+        localStorage.setItem('cardsHidden', 'true');
+        checkCardStatus();
+    });
+
+    function showEventDetails(eventTitle) {
+        // Implementasi untuk menampilkan detail acara
+        alert(`Detail acara untuk: ${eventTitle}`);
+        // Di sini Anda bisa menambahkan logika untuk menampilkan modal atau halaman detail acara
+    }
+</script>
+<!--END AGENDA-->
+
 
     <!-- Kontak Section -->
     <section id="kontak" class="py-5">
@@ -379,6 +579,7 @@
             </div>
         </div>
     </section>
+    
 
     <!-- Footer -->
     <footer class="text-white text-center py-3" style="background-color: #bdbbbb;">

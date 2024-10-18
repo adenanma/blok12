@@ -568,7 +568,7 @@ AKHIR NEWS SECTION-->
     <style>
         
         #hero {
-            background-image: url('../beranda/img/logo.jpeg');
+            background-image: url('/beranda/img/logo.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -919,75 +919,7 @@ AKHIR NEWS SECTION-->
     </footer>
     <!--AKHIR FOOTER-->
     
-<!--MUSIC JS-->
-    <!-- Musik Autoplay -->
-    <audio id="backgroundMusic" loop>
-        <source src="bgaudio.mp3" type="audio/mpeg">
-        Browser Anda tidak mendukung elemen audio.
-    </audio>
 
-    <!-- Ikon Kontrol Musik -->
-    <div id="musicControl" class="music-control">
-        <i id="musicIcon" class="fas fa-music fa-2x"></i>
-        <span id="musicStatus" class="music-status">Musik Aktif</span>
-    </div>
-
-    <style>
-        .music-control {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            z-index: 1000;
-            cursor: pointer;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px 15px;
-            border-radius: 30px;
-            display: flex;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-        .music-control:hover {
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-        #musicIcon {
-            color: #fff;
-            margin-right: 10px;
-        }
-        .music-status {
-            color: #fff;
-            font-size: 14px;
-        }
-    </style>
-
-    <script>
-        var music = document.getElementById("backgroundMusic");
-        var musicIcon = document.getElementById("musicIcon");
-        var musicStatus = document.getElementById("musicStatus");
-        var isPlaying = false;
-
-        function toggleBackgroundMusic() {
-            if (isPlaying) {
-                music.pause();
-                musicIcon.className = "fas fa-music fa-2x";
-                musicStatus.textContent = "Musik Mati";
-            } else {
-                music.play();
-                musicIcon.className = "fas fa-pause fa-2x";
-                musicStatus.textContent = "Musik Aktif";
-            }
-            isPlaying = !isPlaying;
-        }
-
-        document.getElementById("musicControl").addEventListener("click", toggleBackgroundMusic);
-
-        window.onload = function() {
-            music.volume = 0.5;
-            music.play();
-            isPlaying = true;
-            musicIcon.className = "fas fa-pause fa-2x";
-        }
-    </script>
-<!--AKHIR MUSIC JS-->
 
 <!--BUTTON SCROLL-->
 <script>

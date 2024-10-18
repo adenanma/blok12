@@ -20,9 +20,9 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="adventure.jpeg" alt="Logo Blok 12" width="25" height="25" class="d-inline-block align-top me-1">
-            <span class="fs-6">BLOK 12 BROTHERHOOD</span>
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="adventure.jpeg" alt="Logo Blok 12" width="30" height="30" class="d-inline-block align-top me-2">
+            <span class="fs-6 d-none d-sm-inline">BLOK 12 BROTHERHOOD</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -30,19 +30,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#tentang"><i class="bi bi-info-circle"></i> TENTANG KAMI</a>
+                    <a class="nav-link" href="#tentang"><i class="bi bi-info-circle">TENTANG KAMI</i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#moment"><i class="bi bi-house-door"></i> MOMENT KAMI</a>
+                    <a class="nav-link" href="#moment"><i class="bi bi-images">MOMENT KAMI</i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#agenda"><i class="bi bi-calendar"></i> AGENDA KAMI</a>
+                    <a class="nav-link" href="#agenda"><i class="bi bi-calendar">TENTANG KAMI</i></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-activity"></i> KEGIATAN KAMI
+                        <i class="bi bi-activity">KEGIATAN KAMI</i>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark animated fadeIn" aria-labelledby="navbarDropdown">
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="sport/sport.html"><i class="bi bi-trophy"></i> GO!!!BLOK SPORTS</a></li>
                         <li><a class="dropdown-item" href="art/art.html"><i class="bi bi-palette"></i> GO!!!BLOK ART</a></li>
                         <li><a class="dropdown-item" href="gowes/gowes.html"><i class="bi bi-bicycle"></i> GO!!!BLOK GOWES</a></li>
@@ -51,7 +51,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#kontak"><i class="bi bi-envelope"></i> KONTAK KAMI</a>
+                    <a class="nav-link" href="#kontak"><i class="bi bi-envelope">KONTAK KAMI</i></a>
                 </li>
             </ul>
         </div>
@@ -62,13 +62,13 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
     body {
         font-family: 'Poppins', sans-serif;
-        padding-top: 70px; /* Menambahkan padding atas untuk mengakomodasi navbar */
+        padding-top: 56px;
     }
     .navbar {
-        padding: 1rem 0;
+        padding: 0.5rem 1rem;
         transition: all 0.3s ease;
-        background-color: rgba(33, 37, 41, 0.5);
-        backdrop-filter: blur(5px);
+        background-color: rgba(33, 37, 41, 0.9);
+        backdrop-filter: blur(10px);
     }
     .navbar-brand {
         font-weight: 700;
@@ -76,7 +76,7 @@
     }
     .navbar-nav .nav-link {
         transition: color 0.3s ease, transform 0.3s ease;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.75rem;
         color: #fff;
     }
     .navbar-nav .nav-link:hover {
@@ -84,24 +84,38 @@
         transform: translateY(-2px);
     }
     .navbar-scrolled {
-        background-color: rgba(33, 37, 41, 0.9) !important;
+        background-color: rgba(33, 37, 41, 0.95) !important;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
     @media (max-width: 991.98px) {
         .navbar-nav {
-            padding-top: 1rem;
+            padding-top: 0.5rem;
         }
         .navbar-nav .nav-item {
             text-align: center;
         }
+        .navbar-nav .nav-link {
+            padding: 0.25rem 0.5rem;
+        }
     }
     @media (min-width: 992px) {
         .navbar-expand-lg .navbar-nav .nav-link {
-            padding-right: 1rem;
-            padding-left: 1rem;
+            padding-right: 0.75rem;
+            padding-left: 0.75rem;
         }
     }
-    
+    .dropdown-menu {
+        border: none;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+    .dropdown-item {
+        padding: 0.5rem 1rem;
+        transition: background-color 0.3s ease;
+    }
+    .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
 </style>
 <!-- END NAVBAR -->
 

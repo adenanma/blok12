@@ -67,8 +67,7 @@
             .card-flipper {
                 perspective: 1000px;
                 width: 100%;
-                height: 0;
-                padding-bottom: 133.33%;
+                aspect-ratio: 3/4;
                 position: relative;
                 margin-bottom: 10px;
                 cursor: pointer;
@@ -100,7 +99,7 @@
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
-                border-radius: 8px;
+                border-radius: 12px;
                 overflow: hidden;
             }
             .card-front {
@@ -110,6 +109,12 @@
                 background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
                 transform: rotateY(180deg);
                 padding: 10px;
+            }
+            .worker-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
             }
             .worker-name {
                 position: absolute;
@@ -142,25 +147,12 @@
                 color: #E1306C;
             }
             @media (max-width: 575px) {
-                .card-flipper {
-                    padding-bottom: 100%;
-                }
                 .worker-name {
                     font-size: 0.7rem;
                     height: 40px;
                 }
                 .instagram-icon {
                     font-size: 2rem;
-                }
-            }
-            @media (min-width: 576px) and (max-width: 767px) {
-                .card-flipper {
-                    padding-bottom: 120%;
-                }
-            }
-            @media (min-width: 768px) and (max-width: 991px) {
-                .card-flipper {
-                    padding-bottom: 130%;
                 }
             }
         </style>
@@ -211,7 +203,7 @@
                     <div class="card-flipper" data-index="${index}">
                         <div class="card-inner">
                             <div class="card-front">
-                                <img src="${worker.image}" alt="${worker.name}" class="img-fluid h-100 w-100 object-fit-cover">
+                                <img src="${worker.image}" alt="${worker.name}" class="worker-image" loading="lazy">
                                 <div class="worker-name">${worker.name}</div>
                             </div>
                             <div class="card-back">

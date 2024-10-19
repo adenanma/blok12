@@ -1,282 +1,333 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOK12 BROTHERHOOD</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="beranda/css/style.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/beranda/img/logo.jpeg" alt="" height="30" class="d-inline-block align-top">
+                BLOK12 BROTHERHOOD
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">BERANDA</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-activity"></i> KEGIATAN KAMI
+                        </a>
+                        <ul class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="sport/sport.html"><i class="bi bi-trophy"></i> GO!!!BLOK SPORTS</a></li>
+                            <li><a class="dropdown-item" href="art/art.html"><i class="bi bi-palette"></i> GO!!!BLOK ART</a></li>
+                            <li><a class="dropdown-item" href="gowes/gowes.html"><i class="bi bi-bicycle"></i> GO!!!BLOK GOWES</a></li>
+                            <li><a class="dropdown-item" href="adventure/adventure.html"><i class="bi bi-compass"></i> GO!!!BLOK ADVENTURE</a></li>
+                            <li><a class="dropdown-item" href="class/class.html"><i class="bi bi-book"></i> GO!!!BLOK CLASS</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--AKHIR NAVBAR-->
 
+<!--WARGA BLOK-->
+        <section class="py-5 mt-5">
+            <div class="container">
+                <h2 class="text-center mb-5">WARGA BLOK 12</h2>
+                <div id="workerContainer" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                    <!-- Kartu pekerja akan ditambahkan di sini oleh JavaScript -->
+                </div>
+            </div>
+        </section>
 
-<div class="wrapper">
-  <h1>WARGA BLOK 12</h1>
-  <div class="cols">
-			<div class="col" ontouchstart="this.classList.toggle('hover');">
-				<div class="container">
-					<div class="front" style="background-image: url(https://i.pinimg.com/736x/13/2d/c0/132dc00ab634d1717db1e77c77007922.jpg)">
-						<div class="inner">
-							<p>Diligord</p>
-              <span>Lorem ipsum</span>
-						</div>
-					</div>
-					<div class="back">
-						<div class="inner">
-						<p>Social Media:</p>
-						<a href="https://www.instagram.com/m4dnn" target="_blank" rel="noopener noreferrer">
-							<i class="fab fa-instagram fa-2x" style="padding: 10px; box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5); color: #ffffff;"></i>
-						</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col" ontouchstart="this.classList.toggle('hover');">
-				<div class="container">
-					<div class="front" style="background-image: url(https://i.pinimg.com/736x/31/95/c6/3195c66dd8b2eb2de8ee529a073e6d52.jpg)">
-						<div class="inner">
-							<p>Rocogged</p>
-              <span>Lorem ipsum</span>
-						</div>
-					</div>
-					<div class="back">
-						<div class="inner">
-							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col" ontouchstart="this.classList.toggle('hover');">
-				<div class="container">
-					<div class="front" style="background-image: url(https://i.pinimg.com/736x/64/4b/ba/644bba990b630671331b4f09f541a351.jpg)">
-						<div class="inner">
-							<p>Strizzes</p>
-              <span>Lorem ipsum</span>
-						</div>
-					</div>
-					<div class="back">
-						<div class="inner">
-							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col" ontouchstart="this.classList.toggle('hover');">
-				<div class="container">
-					<div class="front" style="background-image: url(https://i.pinimg.com/736x/76/a7/8b/76a78baabfe4da159674a41eb8dcd486.jpg)">
-						<div class="inner">
-							<p>Clossyo</p>
-              <span>Lorem ipsum</span>
-						</div>
-					</div>
-					<div class="back">
-						<div class="inner">
-							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-  </div>
-</div>		
+        <style>
+            .card-flipper {
+                perspective: 1000px;
+                width: 100%;
+                height: 0;
+                padding-bottom: 133.33%;
+                position: relative;
+                margin-bottom: 20px;
+                cursor: pointer;
+            }
+            .card-inner {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: transform 0.6s;
+                transform-style: preserve-3d;
+            }
+            .card-flipper.flipped .card-inner {
+                transform: rotateY(180deg);
+            }
+            .card-front, .card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            .card-front {
+                background-color: #f8f9fa;
+            }
+            .card-back {
+                background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+                transform: rotateY(180deg);
+                padding: 20px;
+            }
+            .worker-name {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0, 0, 0, 0.3);
+                color: white;
+                padding: 10px;
+                text-align: center;
+                font-size: 1rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                height: 80px; /* Tetapkan tinggi yang sama untuk semua nama */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                word-break: break-word;
+                overflow: hidden;
+            }
+            .instagram-icon {
+                font-size: 3rem;
+                color: white;
+                transition: transform 0.3s ease;
+            }
+            .instagram-icon:hover {
+                transform: scale(1.2);
+            }
+            @media (max-width: 575px) {
+                .card-flipper {
+                    padding-bottom: 100%;
+                }
+                .worker-name {
+                    font-size: 0.9rem;
+                }
+            }
+            @media (min-width: 576px) and (max-width: 767px) {
+                .card-flipper {
+                    padding-bottom: 120%;
+                }
+            }
+            @media (min-width: 768px) and (max-width: 991px) {
+                .card-flipper {
+                    padding-bottom: 130%;
+                }
+            }
+        </style>
 
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
+        <script>
+            const workers = [
+                { name: "lestari kumbara", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "lestari kumbara", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "lestari kumbara", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "lestari kumbara", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "lestari kumbara", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "lestari kumbara", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "lestari kumbara", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "lestari kumbara", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" }
+            ];
 
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f0f0f0;
-  }
+            const workerContainer = document.getElementById('workerContainer');
 
-  h1 {
-    font-size: clamp(2rem, 6vw, 3rem);
-    font-weight: normal;
-    color: #444;
-    text-align: center;
-    margin: 2.5rem 0;
-  }
+            workers.forEach((worker, index) => {
+                const workerCard = document.createElement('div');
+                workerCard.className = 'col';
+                workerCard.innerHTML = `
+                    <div class="card-flipper" data-index="${index}">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="${worker.image}" alt="${worker.name}" class="img-fluid h-100 w-100 object-fit-cover">
+                                <div class="worker-name">${worker.name}</div>
+                            </div>
+                            <div class="card-back">
+                                <a href="${worker.instagram}" target="_blank" rel="noopener noreferrer">
+                                    <i class="bi bi-instagram instagram-icon"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                workerContainer.appendChild(workerCard);
+            });
 
-  .wrapper {
-    width: 98%;
-    margin: 0 auto;
-    max-width: 90rem;
-  }
+            workerContainer.addEventListener('click', (e) => {
+                const flipper = e.target.closest('.card-flipper');
+                if (flipper) {
+                    flipper.classList.toggle('flipped');
+                }
+            });
 
-  .cols {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-  }
+            // Animasi muncul satu per satu
+            function animateCards() {
+                const cards = document.querySelectorAll('.card-flipper');
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                        
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    }, index * 200);
+                });
+            }
 
-  .col {
-    width: 100%;
-    max-width: 400px;
-    cursor: pointer;
-  }
+            // Jalankan animasi setelah halaman dimuat
+            window.addEventListener('load', animateCards);
+        </script>
+<!--END WARGA BLOK-->
 
-  .container {
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-perspective: 1000px;
-    perspective: 1000px;
-  }
-
-  .front,
-  .back {
-    background-size: cover;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.35);
-    border-radius: 20px;
-    background-position: center;
-    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    text-align: center;
-    min-height: 350px;
-    height: auto;
-    color: #fff;
-    font-size: 2rem;
-  }
-
-  .back {
-    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #E1306C, #FD1D1D);
-  }
-
-  .front:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    content: '';
-    display: block;
-    opacity: .6;
-    background-color: #000;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    border-radius: 20px;
-  }
-
-  .container:hover .front,
-  .container:hover .back {
-    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  }
-
-  .back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-
-  .inner {
-    -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
-    transform: translateY(-50%) translateZ(60px) scale(0.94);
-    top: 50%;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    padding: 3rem;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    outline: 1px solid transparent;
-    -webkit-perspective: inherit;
-    perspective: inherit;
-    z-index: 2;
-  }
-
-  .container .back {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-  }
-
-  .container .front {
-    -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-  }
-
-  .container:hover .back {
-    -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-  }
-
-  .container:hover .front {
-    -webkit-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-  }
-
-  .front .inner p {
-    font-size: clamp(2.2rem, 6vw, 3rem);
-    margin-bottom: 3rem;
-    position: relative;
-  }
-
-  .front .inner p:after {
-    content: '';
-    width: 6rem;
-    height: 4px;
-    position: absolute;
-    background: #C6D4DF;
-    display: block;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    bottom: -1.5rem;
-  }
-
-  .front .inner span {
-    color: rgba(255,255,255,0.9);
-    font-weight: 300;
-    font-size: 1.6rem;
-  }
-
-  @media screen and (max-width: 639px) {
-    .col {
-      width: 100%;
-      max-width: 400px;
-    }
-    .front, .back {
-      min-height: 350px;
-    }
-    .inner {
-      padding: 2.5rem;
-    }
-    .front .inner p {
-      font-size: 2.5rem;
-      margin-bottom: 2.5rem;
-    }
-    .front .inner span {
-      font-size: 1.5rem;
-    }
-  }
-
-  @media screen and (min-width: 640px) {
-    .col {
-      width: calc(50% - 2rem);
-    }
-  }
-
-  @media screen and (min-width: 960px) {
-    .col {
-      width: calc(33.333333% - 2rem);
-    }
-  }
-
-  @media screen and (min-width: 1280px) {
-    .col {
-      width: calc(25% - 2rem);
-    }
-  }
-</style>
+        <!-- Footer Section -->
+        <footer class="bg-dark text-light py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p>&copy; 2024, BlOK 12 BROTHERHOOD.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="https://www.instagram.com/blok12_brotherhood/" class="text-light me-3" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@blok12_brother" class="text-light me-3" target="_blank" rel="noopener noreferrer"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@blok12_brotherhood" class="text-light" target="_blank" rel="noopener noreferrer"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--AKHIR FOOTER-->
+        
+    <!--BUTTON SCROLL-->
+    <script>
+        // Fungsi untuk menampilkan atau menyembunyikan tombol scroll-up
+        function toggleScrollUpButton() {
+            var scrollUpBtn = document.getElementById("scrollUpBtn");
+            if (window.pageYOffset > window.innerHeight / 2) {
+                scrollUpBtn.classList.add("show");
+            } else {
+                scrollUpBtn.classList.remove("show");
+            }
+        }
+    
+        // Fungsi untuk scroll ke atas halaman dengan animasi smooth
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    
+        // Menambahkan event listener saat halaman di-scroll dengan throttling
+        let throttleTimer;
+        window.addEventListener("scroll", function() {
+            if (throttleTimer) return;
+            throttleTimer = setTimeout(function() {
+                toggleScrollUpButton();
+                throttleTimer = null;
+            }, 100);
+        });
+    
+        // Menambahkan tombol scroll-up ke dalam DOM
+        document.body.insertAdjacentHTML('beforeend', '<button onclick="scrollToTop()" id="scrollUpBtn" title="Kembali ke atas" class="scroll-up-btn"><i class="bi bi-arrow-up"></i></button>');
+    
+        // Menambahkan style untuk tombol scroll-up
+        var style = document.createElement('style');
+        style.innerHTML = `
+            .scroll-up-btn {
+                opacity: 0;
+                visibility: hidden;
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                z-index: 99;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                color: black;
+                cursor: pointer;
+                padding: 18px;
+                border-radius: 50%;
+                font-size: 24px;
+                transition: all 0.3s ease;
+                transform: translateY(20px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+            }
+            .scroll-up-btn.show {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            .scroll-up-btn:hover {
+                background-color: transparent;
+            }
+            .scroll-up-btn::after {
+                content: "NAIK ATAS";
+                margin-left: 5px;
+                font-size: 16px;
+                text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
+            }
+            @media (max-width: 768px) {
+                .scroll-up-btn {
+                    bottom: 20px;
+                    right: 20px;
+                    padding: 15px;
+                    font-size: 20px;
+                }
+                .scroll-up-btn::after {
+                    font-size: 14px;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        </script>
+    <!--AKHIR BUTTON SCROLL-->
+    
+        <!-- AOS JS -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Custom JS -->
+        <script src="beranda/js/script.js"></script>
+        <script src="beranda/js/form.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </body>
+    </html>

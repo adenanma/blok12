@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfirmasi Akses - Blok 12 Brotherhood</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup-content {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 90%;
+            width: 400px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .popup-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffecd2);
+            animation: gradient 10s ease infinite;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        @keyframes gradient {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .btn-submit, .btn-whatsapp {
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-submit:hover, .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+        .btn-submit {
+            background-color: #007bff;
+        }
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+        #accessCode {
+            font-size: 1.2rem;
+            letter-spacing: 0.5em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <h3 class="mb-4"><i class="fas fa-lock me-2"></i>Konfirmasi Akses</h3>
+            <p class="mb-4">Masukkan kode akses untuk membuka halaman eksklusif Warga Blok 12.</p>
+            <input type="text" id="accessCode" class="form-control mb-3" placeholder="Kode Akses" maxlength="6">
+            <button id="submitBtn" class="btn btn-submit btn-lg w-100 mb-3">
+                <i class="fas fa-key me-2"></i>Buka Akses
+            </button>
+            <p class="mb-2">Belum punya kode akses?</p>
+            <a href="https://wa.me/+6285172121407?text=Halo,%20saya%20ingin%20meminta%20kode%20akses%20untuk%20halaman%20Warga%20Blok%2012." class="btn btn-whatsapp btn-lg w-100" target="_blank">
+                <i class="fab fa-whatsapp me-2"></i>Minta Kode Akses via WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var popupOverlay = document.getElementById('popupOverlay');
+            var accessCodeInput = document.getElementById('accessCode');
+            var submitBtn = document.getElementById('submitBtn');
+            
+            document.body.style.overflow = 'hidden';
+            
+            const correctCode = "BL0K12"; // Kode akses yang benar
+            
+            submitBtn.addEventListener('click', function() {
+                if (accessCodeInput.value.toUpperCase() === correctCode) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Akses Diizinkan!',
+                        text: 'Selamat! Anda telah berhasil mengakses halaman eksklusif Warga Blok 12.',
+                        confirmButtonText: 'Masuk ke Website',
+                        confirmButtonColor: '#28a745',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'warga/warga.html';
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Kode akses salah. Silakan coba lagi atau minta kode akses melalui WhatsApp.',
+                        confirmButtonColor: '#d33',
+                        showClass: {
+                            popup: 'animate__animated animate__shakeX'
+                        }
+                    });
+                    accessCodeInput.value = "";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

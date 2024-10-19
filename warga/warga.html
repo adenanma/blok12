@@ -64,17 +64,6 @@
         </section>
 
         <style>
-            @keyframes borderAnimation {
-                0% {
-                    border-image: linear-gradient(45deg, #000000, #333333, #666666, #999999, #CCCCCC, #FFFFFF) 1;
-                }
-                50% {
-                    border-image: linear-gradient(225deg, #000000, #333333, #666666, #999999, #CCCCCC, #FFFFFF) 1;
-                }
-                100% {
-                    border-image: linear-gradient(45deg, #000000, #333333, #666666, #999999, #CCCCCC, #FFFFFF) 1;
-                }
-            }
             .card-flipper {
                 perspective: 1000px;
                 width: 100%;
@@ -83,9 +72,13 @@
                 position: relative;
                 margin-bottom: 10px;
                 cursor: pointer;
-                border: 3px solid;
-                border-radius: 8px;
-                animation: borderAnimation 3s linear infinite;
+                border-radius: 12px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                transition: all 0.3s ease;
+            }
+            .card-flipper:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
             }
             .card-inner {
                 position: absolute;
@@ -107,7 +100,7 @@
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
-                border-radius: 5px;
+                border-radius: 8px;
                 overflow: hidden;
             }
             .card-front {
@@ -123,28 +116,30 @@
                 bottom: 0;
                 left: 0;
                 right: 0;
-                background-color: rgba(0, 0, 0, 0.3);
+                background-color: rgba(0, 0, 0, 0.5);
                 color: white;
-                padding: 5px;
+                padding: 8px;
                 text-align: center;
                 font-size: 0.8rem;
                 font-weight: bold;
                 text-transform: uppercase;
-                height: 60px;
+                height: 50px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 flex-wrap: wrap;
                 word-break: break-word;
                 overflow: hidden;
+                backdrop-filter: blur(2px);
             }
             .instagram-icon {
-                font-size: 2rem;
+                font-size: 2.5rem;
                 color: white;
-                transition: transform 0.3s ease;
+                transition: transform 0.3s ease, color 0.3s ease;
             }
             .instagram-icon:hover {
-                transform: scale(1.2);
+                transform: scale(1.2) rotate(15deg);
+                color: #E1306C;
             }
             @media (max-width: 575px) {
                 .card-flipper {
@@ -152,10 +147,10 @@
                 }
                 .worker-name {
                     font-size: 0.7rem;
-                    height: 50px;
+                    height: 40px;
                 }
                 .instagram-icon {
-                    font-size: 1.5rem;
+                    font-size: 2rem;
                 }
             }
             @media (min-width: 576px) and (max-width: 767px) {
@@ -172,14 +167,39 @@
 
         <script>
             const workers = [
-                { name: "lestari kumbara", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
-                { name: "lestari kumbara", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
-                { name: "lestari kumbara", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
-                { name: "lestari kumbara", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
-                { name: "lestari kumbara", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
-                { name: "lestari kumbara", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
-                { name: "lestari kumbara", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
-                { name: "lestari kumbara", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" }
+                { name: "DAVA PRAMANA", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "FAJAR ARI ORTEGA", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "NAYARA SYIFA", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "AZZAHRA HANDAYANI", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "INE MARIANA", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "HANDI SETIAWAN", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "MUHAMMAD HANIF FIRDAUS", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "FIRAS BAADILLAH", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "NAUFAL CATUR", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "RAMADHAN HAFIZH", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "NATHANIA SALAMONY", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "OKTAVIA SALVA NESYA", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "DEBBY FATMAWATI", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "DESTA RAKASIWA", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "ERIKA BANDARA SATI", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "DEA NAYLA PUTRI", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "ADE NURUL IRLANI", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "BARI DARIS KURNIAWAN", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "RAIHAN ALFARISI", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "FAQIH RAYYA", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "ANDIKA RIZKY", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "KEVIN ADITYA", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "DJENAR DWIAYU", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "FAQIH ADI GUNAWAN", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "AGUNG KURNIA RAMADHAN", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "FADLAN ALI RAMDANI", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "RAKA ANDIKA", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "ARDITYA HERLAMBANG", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "MUHAMMAD ADENAN", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "DITYA ZAKY", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "DWIKIE REY FALDY", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "RESTU PUTRA PERDANA", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" },
+                { name: "RAFI ILYAS RAMADANI", image: "https://pbs.twimg.com/media/EVUT-trU0AAC2VE.jpg:large", instagram: "https://www.instagram.com/m4dnn", target: "_blank" }
             ];
 
             const workerContainer = document.getElementById('workerContainer');
@@ -262,7 +282,7 @@
                 scrollUpBtn.classList.remove("show");
             }
         }
-    
+
         // Fungsi untuk scroll ke atas halaman dengan animasi smooth
         function scrollToTop() {
             window.scrollTo({
@@ -270,7 +290,7 @@
                 behavior: "smooth"
             });
         }
-    
+
         // Menambahkan event listener saat halaman di-scroll dengan throttling
         let throttleTimer;
         window.addEventListener("scroll", function() {
@@ -280,10 +300,10 @@
                 throttleTimer = null;
             }, 100);
         });
-    
+
         // Menambahkan tombol scroll-up ke dalam DOM
         document.body.insertAdjacentHTML('beforeend', '<button onclick="scrollToTop()" id="scrollUpBtn" title="Kembali ke atas" class="scroll-up-btn"><i class="bi bi-arrow-up"></i></button>');
-    
+
         // Menambahkan style untuk tombol scroll-up
         var style = document.createElement('style');
         style.innerHTML = `
@@ -336,7 +356,7 @@
             }
         `;
         document.head.appendChild(style);
-        </script>
+    </script>
     <!--AKHIR BUTTON SCROLL-->
     
         <!-- AOS JS -->

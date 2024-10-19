@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOK12 BROTHERHOOD</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="beranda/css/style.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="beranda/img/logo.jpeg" alt="" height="30" class="d-inline-block align-top">
+                BLOK12 BROTHERHOOD
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="#news">BERITA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">BERANDA</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-activity"></i> KEGIATAN KAMI
+                        </a>
+                        <ul class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="sport/sport.html"><i class="bi bi-trophy"></i> GO!!!BLOK SPORTS</a></li>
+                            <li><a class="dropdown-item" href="art/art.html"><i class="bi bi-palette"></i> GO!!!BLOK ART</a></li>
+                            <li><a class="dropdown-item" href="gowes/gowes.html"><i class="bi bi-bicycle"></i> GO!!!BLOK GOWES</a></li>
+                            <li><a class="dropdown-item" href="adventure/adventure.html"><i class="bi bi-compass"></i> GO!!!BLOK ADVENTURE</a></li>
+                            <li><a class="dropdown-item" href="class/class.html"><i class="bi bi-book"></i> GO!!!BLOK CLASS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">PESAN UNTUK KAMI</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--AKHIR NAVBAR-->
+
+    <!-- BERITA -->
+    <section id="news" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">BERITA BLOK12</h2>
+            <div class="position-relative">
+                <div class="news-slider overflow-hidden">
+                    <div class="news-container d-flex flex-nowrap">
+                        <div class="news-card card border-0 shadow-sm mx-2">
+                            <div class="position-relative">
+                                <img src="https://peakvisor.com/photo/gunung-semeru-1.jpg" alt="Berita 1" class="card-img-top">
+                                <span class="position-absolute top-0 start-0 badge bg-warning m-2">GO!!!BLOK ADVENTURE</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Pendakian Epik ke Puncak Semeru: Petualangan Menantang di Gunung Tertinggi Jawa</h5>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <p class="card-text text-muted mb-0"><small>15 Juli 2023</small></p>
+                                    <span class="badge bg-success">Baru</span>
+                                </div>
+                                <a href="#" class="btn btn-secondary read-more" onclick="toggleDeskripsi('1')">Baca Selengkapnya</a>
+                                <div id="deskripsi-1" style="display: none;">
+                                    <p class="mt-3">Pendakian ke Gunung Semeru merupakan pengalaman menantang dan menakjubkan. Sebagai gunung tertinggi di Pulau Jawa dengan ketinggian 3.676 mdpl, Semeru menawarkan pemandangan alam yang spektakuler. Pendaki harus melalui jalur yang curam dan medan yang sulit, termasuk padang pasir dan hutan tropis. Puncak Mahameru yang ikonik dengan kepulan asapnya menjadi hadiah utama bagi para pendaki yang berhasil mencapai puncak. Persiapan fisik dan mental yang matang sangat diperlukan untuk menaklukkan gunung berapi aktif ini.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-card card border-0 shadow-sm mx-2">
+                            <img src="https://sarasvati.co.id/wp-content/uploads/2016/08/Suasana-acara-Art-Stage-Jakarta.jpg" alt="Berita 2" class="card-img-top">
+                            <span class="position-absolute top-0 start-0 badge bg-warning m-2">GO!!!BLOK ART</span>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Pameran Seni Kontemporer: Ekspresi Kreatif Warga Blok 12</h5>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <p class="card-text text-muted mb-0"><small>10 Juli 2023</small></p>
+                                    <span class="badge bg-success">Baru</span>
+                                </div>
+                                <a href="#" class="btn btn-secondary read-more" onclick="toggleDeskripsi('2')">Baca Selengkapnya</a>
+                                <div id="deskripsi-2" style="display: none;">
+                                    <p class="mt-3">Pameran seni kontemporer ini menampilkan karya-karya kreatif dari warga Blok 12 yang berbakat. Acara ini menjadi wadah bagi seniman lokal untuk mengekspresikan diri melalui berbagai medium seperti lukisan, patung, instalasi, dan seni digital. Pengunjung dapat menikmati keragaman gaya dan tema yang mencerminkan dinamika kehidupan di komunitas kami. Selain pameran, acara ini juga mengadakan workshop seni dan diskusi dengan para seniman, memberikan kesempatan bagi warga untuk lebih memahami dan mengapresiasi seni kontemporer.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary prev-btn rounded-circle" aria-label="Berita sebelumnya">&lt;</button>
+                <button class="btn btn-primary next-btn rounded-circle" aria-label="Berita selanjutnya">&gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .news-slider {
+            position: relative;
+            width: 100%;
+            padding: 20px 0;
+            overflow: hidden;
+        }
+        .news-container {
+            transition: transform 0.5s ease;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .news-card {
+            flex: 0 0 100%;
+            max-width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-right: 16px;
+        }
+        @media (min-width: 576px) {
+            .news-card {
+                flex: 0 0 calc(50% - 16px);
+                max-width: calc(50% - 16px);
+            }
+        }
+        @media (min-width: 992px) {
+            .news-card {
+                flex: 0 0 calc(33.333% - 16px);
+                max-width: calc(33.333% - 16px);
+            }
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+        .prev-btn, .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.523);
+            border: none;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .prev-btn:hover, .next-btn:hover {
+            background-color: rgb(0, 0, 0);
+        }
+        .prev-btn {
+            left: 10px;
+        }
+        .next-btn {
+            right: 10px;
+        }
+        .text-truncate-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.news-container');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const cards = document.querySelectorAll('.news-card');
+            let currentIndex = 0;
+
+            function updateSlider() {
+                const cardWidth = cards[0].offsetWidth;
+                const maxIndex = cards.length - Math.floor(container.offsetWidth / cardWidth);
+                container.style.transform = `translateX(-${currentIndex * (cardWidth + 16)}px)`;
+                
+                prevBtn.style.display = currentIndex <= 0 ? 'none' : 'flex';
+                nextBtn.style.display = currentIndex >= maxIndex ? 'none' : 'flex';
+            }
+
+            function moveSlider(direction) {
+                const maxIndex = cards.length - Math.floor(container.offsetWidth / cards[0].offsetWidth);
+                currentIndex = Math.max(0, Math.min(currentIndex + direction, maxIndex));
+                updateSlider();
+            }
+
+            nextBtn.addEventListener('click', () => moveSlider(1));
+            prevBtn.addEventListener('click', () => moveSlider(-1));
+
+            window.addEventListener('resize', updateSlider);
+
+            updateSlider();
+
+            window.toggleDeskripsi = function(id) {
+                const deskripsi = document.getElementById(`deskripsi-${id}`);
+                const readMoreBtn = deskripsi.previousElementSibling;
+                const cardText = deskripsi.previousElementSibling.previousElementSibling;
+
+                if (deskripsi.style.display === 'none') {
+                    deskripsi.style.display = 'block';
+                    readMoreBtn.textContent = 'Sembunyikan';
+                    cardText.classList.remove('text-truncate-3');
+                } else {
+                    deskripsi.style.display = 'none';
+                    readMoreBtn.textContent = 'Baca Selengkapnya';
+                    cardText.classList.add('text-truncate-3');
+                }
+            }
+
+            let startX, isDragging = false, startPos;
+
+            container.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                isDragging = true;
+                startPos = currentIndex * (cards[0].offsetWidth + 16);
+            });
+
+            container.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                const currentX = e.touches[0].clientX;
+                const diff = startX - currentX;
+                container.style.transform = `translateX(-${startPos + diff}px)`;
+            });
+
+            container.addEventListener('touchend', (e) => {
+                if (!isDragging) return;
+                isDragging = false;
+                const endX = e.changedTouches[0].clientX;
+                const diff = startX - endX;
+                if (Math.abs(diff) > 50) {
+                    moveSlider(diff > 0 ? 1 : -1);
+                } else {
+                    updateSlider();
+                }
+            });
+        });
+    </script>
+    <!-- END BERITA -->
+
+
+<!--NEWS SECTION
+<section id="berita" class="py-5">
+    <div class="container">
+        <div class="news-slider-container">
+            <button class="slider-arrow prev-arrow"><i class="bi bi-chevron-left"></i></button>
+            <div class="news-slider">
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://www.inilah.com/_next/image?url=https%3A%2F%2Fc.inilah.com%2Freborn%2F2024%2F03%2FSejarah_Gunung_Semeru_a8f4c03a3e.webp&w=3840&q=75')">
+                        <div class="news-overlay">
+                            <span class="news-category">ADVENTURE</span>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date"><i class="bi bi-calendar3"></i> 12 Juli 2023</span>
+                        <h5>Pendakian Gunung Semeru: Petualangan Menantang Warga Blok 12</h5>
+                        <p class="news-description" style="display: none;">
+                            Sekelompok warga Blok 12 berhasil mencapai puncak Gunung Semeru dalam ekspedisi pendakian yang mendebarkan. Perjalanan ini tidak hanya menguji ketahanan fisik, tetapi juga memperkuat ikatan persaudaraan di antara para pendaki.
+                        </p>
+                        <button class="btn btn-primary btn-sm read-more">Baca selengkapnya</button>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://www.papuapos.com/wp-content/uploads/2024/08/TEMA-HUT-RI-KE-79.png')">
+                        <div class="news-overlay">
+                            <span class="news-category">Olahraga</span>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date"><i class="bi bi-calendar3"></i> 12 Juli 2023</span>
+                        <h5>Turnamen Futsal Antar RT Sukses Digelar</h5>
+                        <p class="news-description" style="display: none;">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </p>
+                        <button class="btn btn-primary btn-sm read-more">Baca selengkapnya</button>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-arrow next-arrow"><i class="bi bi-chevron-right"></i></button>
+        </div>
+    </div>
+</section>
+
+<style>
+    .news-slider-container {
+        position: relative;
+        max-width: 100%;
+        overflow: hidden;
+        padding: 1rem 0;
+    }
+    .news-slider {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+    .news-card {
+        flex: 0 0 calc(100% - 1rem);
+        margin-right: 1rem;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        box-shadow: 0 0.625rem 1.25rem rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        background: #fff;
+    }
+    .news-card:hover {
+        transform: translateY(-0.625rem) scale(1.02);
+        box-shadow: 0 0.9375rem 1.875rem rgba(0,0,0,0.2);
+    }
+    .news-image {
+        height: 15rem;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    .news-overlay {
+        position: absolute;
+        top: 0.625rem;
+        left: 0.625rem;
+        background: rgba(0,0,0,0.7);
+        padding: 0.3125rem 0.625rem;
+        border-radius: 1.25rem;
+    }
+    .news-category {
+        color: #fff;
+        font-size: 1em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .news-content {
+        padding: 1.5rem;
+        background-color: #fff;
+    }
+    .news-content h5 {
+        margin-bottom: 0.625rem;
+        text-transform: uppercase;
+        color: #333;
+        font-weight: bold;
+        font-size: 1.3em;
+    }
+    .news-date {
+        display: block;
+        font-size: 1em;
+        color: #888;
+        margin-bottom: 0.625rem;
+    }
+    .news-date i {
+        margin-right: 0.3125rem;
+    }
+    .slider-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    }
+    .slider-arrow:hover {
+        background: rgba(0,0,0,0.7);
+        transform: translateY(-50%) scale(1.1);
+    }
+    .prev-arrow {
+        left: 0.625rem;
+    }
+    .next-arrow {
+        right: 0.625rem;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        transition: all 0.3s ease;
+        font-size: 1em;
+        padding: 0.5rem 1rem;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+        transform: translateY(-0.125rem);
+    }
+
+    @media (min-width: 36rem) {
+        .news-card {
+            flex: 0 0 calc(100% - 1rem);
+        }
+    }
+
+    @media (min-width: 48rem) {
+        .news-card {
+            flex: 0 0 calc(100% - 1rem);
+        }
+    }
+
+    @media (min-width: 62rem) {
+        .news-card {
+            flex: 0 0 calc(100% - 1rem);
+        }
+    }
+
+    @media (max-width: 35.9375rem) {
+        .slider-arrow {
+            width: 2.5rem;
+            height: 2.5rem;
+            font-size: 1.25rem;
+        }
+        .news-content h5 {
+            font-size: 1.2em;
+        }
+        .news-image {
+            height: 12rem;
+        }
+        .news-category {
+            font-size: 0.9em;
+        }
+        .news-date {
+            font-size: 0.9em;
+        }
+        .btn-primary {
+            font-size: 1em;
+            padding: 0.4rem 0.8rem;
+        }
+        .news-content {
+            padding: 1.2rem;
+        }
+    }
+
+    @media (max-width: 23.4375rem) {
+        .news-card {
+            flex: 0 0 calc(100% - 0.5rem);
+            margin-right: 0.5rem;
+        }
+        .news-image {
+            height: 10rem;
+        }
+        .news-content h5 {
+            font-size: 1.1em;
+        }
+        .news-category {
+            font-size: 0.8em;
+        }
+        .news-date {
+            font-size: 0.8em;
+        }
+        .btn-primary {
+            font-size: 0.9em;
+            padding: 0.35rem 0.7rem;
+        }
+        .news-content {
+            padding: 1rem;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slider = document.querySelector('.news-slider');
+        const prevArrow = document.querySelector('.prev-arrow');
+        const nextArrow = document.querySelector('.next-arrow');
+        const cardWidth = 320; // 300px card width + 20px margin
+        let currentPosition = 0;
+
+        function updateSliderPosition() {
+            slider.style.transform = `translateX(${currentPosition}px)`;
+        }
+
+        function moveSlider(direction) {
+            const maxPosition = -(slider.scrollWidth - slider.clientWidth);
+            if (direction === 'prev') {
+                currentPosition = Math.min(currentPosition + cardWidth, 0);
+            } else {
+                currentPosition = Math.max(currentPosition - cardWidth, maxPosition);
+            }
+            updateSliderPosition();
+        }
+
+        prevArrow.addEventListener('click', () => moveSlider('prev'));
+        nextArrow.addEventListener('click', () => moveSlider('next'));
+
+        // Touch events for mobile
+        let startX;
+        let isDragging = false;
+
+        slider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].pageX - currentPosition;
+            isDragging = true;
+        });
+
+        slider.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.touches[0].pageX - startX;
+            currentPosition = x;
+            updateSliderPosition();
+        });
+
+        slider.addEventListener('touchend', () => {
+            isDragging = false;
+            const maxPosition = -(slider.scrollWidth - slider.clientWidth);
+            currentPosition = Math.max(Math.min(currentPosition, 0), maxPosition);
+            updateSliderPosition();
+        });
+        
+        // Read More functionality
+        const readMoreButtons = document.querySelectorAll('.read-more');
+        readMoreButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const description = this.previousElementSibling;
+                if (description.style.display === 'none') {
+                    description.style.display = 'block';
+                    this.textContent = 'Tutup';
+                } else {
+                    description.style.display = 'none';
+                    this.textContent = 'Baca selengkapnya';
+                }
+            });
+        });
+    });
+</script>
+AKHIR NEWS SECTION-->        
+
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="py-5 text-center text-white position-relative">
+        <div class="container">
+            <div class="row justify-content-center align-items-center min-vh-100">
+                <div class="col-lg-8">
+                    <h1 style="text-transform: uppercase;" class="display-4 fw-bold mb-4">Selamat Datang di <br>Blok 12 <br>Brotherhood</h1>
+                    <p class="lead mb-5">Bersatu dalam Keberagaman, Peduli dalam Kebersamaan: Membangun Komunitas yang Kuat dan Harmonis di Blok 12</p>
+                    <div class="d-flex flex-column flex-md-row justify-content-center">
+                        <a href="warga/warga.html" class="btn btn-dark btn-lg mb-3 mb-md-0 me-md-3">WARGA BLOK</a>
+                        <a href="konten/konten.html" class="btn btn-outline-light btn-lg">KONTEN BLOK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <style>
+        
+        #hero {
+            background-image: url('beranda/img/logo.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        #hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        @media (max-width: 768px) {
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+            #hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <!-- END HERO SECTION -->
+
+
+    <!-- HERO SECTION 
+    <section id="beranda" class="hero text-white text-center py-5 min-vh-100 d-flex align-items-center">        
+        <div class="container" style="text-transform: uppercase;">            
+            <h1 style="text-shadow: 2px 2px 4px rgb(0, 0, 0);" class="display-4 mb-4 animated-text" data-aos="fade-up">Selamat Datang di Website <br class="d-none d-md-block"> BLOK12 BROTHERHOOD</h1>
+            <p style="text-shadow: 2px 2px 4px rgb(0, 0, 0);" class="lead mb-5 animated-text" data-aos="fade-up" data-aos-delay="200">Kami memperkenalkan kegiatan warga di blok 12 melalui website ini</p>
+            <div class="d-flex flex-column flex-md-row justify-content-center">
+                <div class="d-flex flex-column flex-md-row justify-content-center align-items-center">
+                    <a href="warga/warga.html" class="btn btn-hero mb-3 mb-md-0 me-md-3 w-100 w-md-auto w-lg-25" data-aos="fade-up" data-aos-delay="400">WARGA BLOK</a>
+                    <a href="konten/konten.html" class="btn btn-hero-outline mb-3 mb-md-0 me-md-3 w-100 w-md-auto w-lg-25" data-aos="fade-up" data-aos-delay="600">KONTEN BLOK</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <style>
+        .hero {
+            background-image: url('img/logo.jpeg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /*background: linear-gradient(45deg, rgba(255, 255, 255, 0.574), rgba(74, 65, 65, 0.579));*/
+            z-index: 1;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .animated-text {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .animated-text.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .btn-hero, .btn-hero-outline {
+            padding: 12px 24px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+        
+        .btn-hero {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        
+        .btn-hero:hover {
+            background-color: #000000;
+            transform: translateY(-3px);
+        }
+        
+        .btn-hero-outline {
+            background-color: #000000;
+            color: #fdfdfd;
+        }
+        
+        .btn-hero-outline:hover {
+            background-color: #000000;
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+        
+        .btn-hero::before, .btn-hero-outline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+        
+        .btn-hero:hover::before, .btn-hero-outline:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroButtons = document.querySelectorAll('.btn-hero, .btn-hero-outline');
+            const animatedTexts = document.querySelectorAll('.animated-text');
+            
+            heroButtons.forEach(button => {
+                button.addEventListener('mouseover', function() {
+                    this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+                });
+                
+                button.addEventListener('mouseout', function() {
+                    this.style.boxShadow = 'none';
+                });
+                
+                button.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 100);
+                });
+            });
+            
+            function showAnimatedText() {
+                animatedTexts.forEach((text, index) => {
+                    setTimeout(() => {
+                        text.classList.add('show');
+                    }, index * 200);
+                });
+            }
+            
+            showAnimatedText();
+            
+            window.addEventListener('scroll', function() {
+                const heroSection = document.querySelector('.hero');
+                const scrollPosition = window.scrollY;
+                
+                heroSection.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+            });
+        });
+    </script>
+    AKHIR HERO SECITON-->
+
+
+
+    <!--Layanan Section -->
+    <section id="layanan" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">UKW <br> (UNIT KEGIATAN WARGA)</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up">
+                    <div class="card h-100 service-card">
+                        <div class="card-body text-center">
+                            <img src="sport/sport.jpeg" alt="Logo UKW" class="img-fluid mb-3" style="max-width: 100px;">
+                            <h5 class="card-title">GO!!!BLOK SPORTS</h5>
+                            <p class="card-text">Bergabunglah dengan GO!!! BLOK SPORTS untuk pengalaman olahraga yang seru, sehat, dan penuh semangat! Bersama-sama kita tingkatkan kebugaran dan raih prestasi.</p>
+                            <a href="sport/sport.html" class="btn btn-dark mt-3">Pelajari Lebih Lanjut</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up">
+                    <div class="card h-100 service-card">
+                        <div class="card-body text-center">
+                            <img src="art/art.jpeg" alt="Logo UKW" class="img-fluid mb-3" style="max-width: 100px;">
+                            <h5 class="card-title">GO!!!BLOK ART</h5>
+                            <p class="card-text">Ekspresikan kreativitasmu bersama GO!!!BLOK ART! Temukan keindahan dalam setiap goresan, warna, dan bentuk. Mari berkarya dan menginspirasi melalui seni yang memukau!</p>
+                            <a href="art/art.html" class="btn btn-dark mt-3">Pelajari Lebih Lanjut</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up">
+                    <div class="card h-100 service-card">
+                        <div class="card-body text-center">
+                            <img src="gowes/gowes.jpeg" alt="Logo UKW" class="img-fluid mb-3" style="max-width: 100px;">
+                            <h5 class="card-title">GO!!!BLOK GOWES</h5>
+                            <p class="card-text">Bergabunglah dengan GO!!!BLOK GOWES untuk petualangan bersepeda yang seru! Nikmati keindahan alam, tingkatkan kebugaran, dan bangun persahabatan di atas dua roda. Ayo gowes bersama kami!</p>
+                            <a href="gowes/gowes.html" class="btn btn-dark mt-3">Pelajari Lebih Lanjut</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4" data-aos="fade-up">
+                    <div class="card h-100 service-card">
+                        <div class="card-body text-center">
+                            <img src="adventure/adventure.jpeg" alt="Logo UKW" class="img-fluid mb-3" style="max-width: 100px;">
+                            <h5 class="card-title">GO!!!BLOK ADVENTURE</h5>
+                            <p class="card-text">Bergabunglah dengan GO!!!BLOK ADVENTURE untuk petualangan seru yang tak terlupakan! Jelajahi alam liar, taklukkan puncak gunung, dan temukan keindahan tersembunyi bersama kami. Siapkan nyali dan semangat Anda untuk pengalaman penuh adrenalin!</p>
+                            <a href="adventure/adventure.html" class="btn btn-dark mt-3">Pelajari Lebih Lanjut</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4" data-aos="fade-up">
+                    <div class="card h-100 service-card">
+                        <div class="card-body text-center">
+                            <img src="class/class.jpeg" alt="Logo UKW" class="img-fluid mb-3" style="max-width: 100px;">
+                            <h5 class="card-title">GO!!!BLOK CLASS</h5>
+                            <p class="card-text">Bergabunglah dengan GO!!!BLOK CLASS untuk petualangan belajar yang menyenangkan! Tingkatkan pengetahuan, kembangkan keterampilan, dan raih impian bersama komunitas pembelajar yang inspiratif. Mari bersama-sama menciptakan masa depan yang lebih cerah melalui pendidikan!</p>
+                            <a href="class/class.html" class="btn btn-dark mt-3">Pelajari Lebih Lanjut</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--AKHIR LAYANAN SECTION-->
+
+    <!-- Kontak Section -->
+    <section id="kontak" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">PESAN UNTUK KAMI</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form method="POST" name="contact-form" id="my-form">
+                        <div class="mb-3">
+                            <input type="text" name="name" class="form-control" placeholder="Nama Anda" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="pesan" class="form-control" rows="4" placeholder="Pesan Anda" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--AKHIR KONTAK SECTION-->
+
+    <!-- Footer Section -->
+       <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p>&copy; 2024, BlOK 12 BROTHERHOOD.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="https://www.instagram.com/blok12_brotherhood/" class="text-light me-3" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@blok12_brother" class="text-light me-3" target="_blank" rel="noopener noreferrer"><i class="bi bi-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@blok12_brotherhood?sub_confirmation=1" class="text-light" target="_blank" rel="noopener noreferrer"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--AKHIR FOOTER-->
+    
+<!--BUTTON SCROLL-->
+<script>
+    // Fungsi untuk menampilkan atau menyembunyikan tombol scroll-up
+    function toggleScrollUpButton() {
+        var scrollUpBtn = document.getElementById("scrollUpBtn");
+        if (window.pageYOffset > window.innerHeight / 2) {
+            scrollUpBtn.classList.add("show");
+        } else {
+            scrollUpBtn.classList.remove("show");
+        }
+    }
+
+    // Fungsi untuk scroll ke atas halaman dengan animasi smooth
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+    // Menambahkan event listener saat halaman di-scroll dengan throttling
+    let throttleTimer;
+    window.addEventListener("scroll", function() {
+        if (throttleTimer) return;
+        throttleTimer = setTimeout(function() {
+            toggleScrollUpButton();
+            throttleTimer = null;
+        }, 100);
+    });
+
+    // Menambahkan tombol scroll-up ke dalam DOM
+    document.body.insertAdjacentHTML('beforeend', '<button onclick="scrollToTop()" id="scrollUpBtn" title="Kembali ke atas" class="scroll-up-btn"><i class="bi bi-arrow-up"></i></button>');
+
+    // Menambahkan style untuk tombol scroll-up
+    var style = document.createElement('style');
+    style.innerHTML = `
+        .scroll-up-btn {
+            opacity: 0;
+            visibility: hidden;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: black;
+            cursor: pointer;
+            padding: 18px;
+            border-radius: 50%;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            transform: translateY(20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+        }
+        .scroll-up-btn.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .scroll-up-btn:hover {
+            background-color: transparent;
+        }
+        .scroll-up-btn::after {
+            content: "NAIK ATAS";
+            margin-left: 5px;
+            font-size: 16px;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
+        }
+        @media (max-width: 768px) {
+            .scroll-up-btn {
+                bottom: 20px;
+                right: 20px;
+                padding: 15px;
+                font-size: 20px;
+            }
+            .scroll-up-btn::after {
+                font-size: 14px;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+    </script>
+<!--AKHIR BUTTON SCROLL-->
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="beranda/js/script.js"></script>
+    <script src="beranda/js/form.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

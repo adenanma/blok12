@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfirmasi Akses - Blok 12 Brotherhood</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup-content {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 90%;
+            width: 400px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .popup-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffecd2);
+            animation: gradient 10s ease infinite;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        @keyframes gradient {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <h3 class="mb-4"><i class="fas fa-lock me-2"></i>Konfirmasi Diperlukan</h3>
+            <p class="mb-4">Untuk mengakses halaman eksklusif Warga Blok 12, mohon lakukan konfirmasi melalui WhatsApp terlebih dahulu.</p>
+            <a href="https://wa.me/+6285172121407?text=Halo,%20saya%20ingin%20konfirmasi%20untuk%20mengakses%20halaman%20Warga%20Blok%2012" class="btn btn-whatsapp btn-lg w-100" target="_blank" id="whatsappBtn">
+                <i class="fab fa-whatsapp me-2"></i>Konfirmasi via WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var popupOverlay = document.getElementById('popupOverlay');
+            var popupContent = popupOverlay.querySelector('.popup-content');
+            
+            document.body.style.overflow = 'hidden';
+            
+            document.getElementById('whatsappBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                var whatsappUrl = this.href;
+                window.open(whatsappUrl, '_blank');
+                
+                popupContent.innerHTML = `
+                    <h3 class="mb-4"><i class="fas fa-hourglass-half me-2"></i>Menunggu Izin</h3>
+                    <p class="mb-4">Mohon tunggu sebentar. Admin sedang memverifikasi permintaan Anda.</p>
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                `;
+                
+                setTimeout(function() {
+                    popupContent.innerHTML = `
+                        <h3 class="mb-4"><i class="fas fa-check-circle me-2 text-success"></i>Akses Diizinkan!</h3>
+                        <p class="mb-4">Selamat! Anda telah diizinkan untuk mengakses halaman eksklusif Warga Blok 12. Silakan klik tombol di bawah ini:</p>
+                        <a href="../beranda.html" class="btn btn-primary btn-lg w-100" id="accessLink">
+                            <i class="fas fa-door-open me-2"></i>Masuk ke Website
+                        </a>
+                    `;
+                    
+                    document.getElementById('accessLink').addEventListener('click', function() {
+                        popupOverlay.remove();
+                        document.body.style.overflow = 'auto';
+                    });
+                }, 30000);
+            });
+        });
+    </script>
+</body>
+</html>

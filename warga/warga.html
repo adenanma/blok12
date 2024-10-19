@@ -57,21 +57,35 @@
         <section class="py-5 mt-5">
             <div class="container">
                 <h2 class="text-center mb-5">WARGA BLOK 12</h2>
-                <div id="workerContainer" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                <div id="workerContainer" class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-2">
                     <!-- Kartu pekerja akan ditambahkan di sini oleh JavaScript -->
                 </div>
             </div>
         </section>
 
         <style>
+            @keyframes borderAnimation {
+                0% {
+                    border-image: linear-gradient(45deg, #000000, #333333, #666666, #999999, #CCCCCC, #FFFFFF) 1;
+                }
+                50% {
+                    border-image: linear-gradient(225deg, #000000, #333333, #666666, #999999, #CCCCCC, #FFFFFF) 1;
+                }
+                100% {
+                    border-image: linear-gradient(45deg, #000000, #333333, #666666, #999999, #CCCCCC, #FFFFFF) 1;
+                }
+            }
             .card-flipper {
                 perspective: 1000px;
                 width: 100%;
                 height: 0;
                 padding-bottom: 133.33%;
                 position: relative;
-                margin-bottom: 20px;
+                margin-bottom: 10px;
                 cursor: pointer;
+                border: 3px solid;
+                border-radius: 8px;
+                animation: borderAnimation 3s linear infinite;
             }
             .card-inner {
                 position: absolute;
@@ -93,7 +107,7 @@
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
-                border-radius: 10px;
+                border-radius: 5px;
                 overflow: hidden;
             }
             .card-front {
@@ -102,7 +116,7 @@
             .card-back {
                 background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
                 transform: rotateY(180deg);
-                padding: 20px;
+                padding: 10px;
             }
             .worker-name {
                 position: absolute;
@@ -111,12 +125,12 @@
                 right: 0;
                 background-color: rgba(0, 0, 0, 0.3);
                 color: white;
-                padding: 10px;
+                padding: 5px;
                 text-align: center;
-                font-size: 1rem;
+                font-size: 0.8rem;
                 font-weight: bold;
                 text-transform: uppercase;
-                height: 80px; /* Tetapkan tinggi yang sama untuk semua nama */
+                height: 60px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -125,7 +139,7 @@
                 overflow: hidden;
             }
             .instagram-icon {
-                font-size: 3rem;
+                font-size: 2rem;
                 color: white;
                 transition: transform 0.3s ease;
             }
@@ -137,7 +151,11 @@
                     padding-bottom: 100%;
                 }
                 .worker-name {
-                    font-size: 0.9rem;
+                    font-size: 0.7rem;
+                    height: 50px;
+                }
+                .instagram-icon {
+                    font-size: 1.5rem;
                 }
             }
             @media (min-width: 576px) and (max-width: 767px) {
@@ -207,7 +225,7 @@
                             card.style.opacity = '1';
                             card.style.transform = 'translateY(0)';
                         }, 50);
-                    }, index * 200);
+                    }, index * 100);
                 });
             }
 

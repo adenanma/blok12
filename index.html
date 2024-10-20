@@ -405,7 +405,34 @@
     
 
 
-    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="8f8e8c53-bd00-4b46-8496-433fa3868f30";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+    <script type="text/javascript">
+        // Inisialisasi Crisp Chat
+        window.$crisp = [];
+        window.CRISP_WEBSITE_ID = "8f8e8c53-bd00-4b46-8496-433fa3868f30";
+        
+        // Fungsi untuk memuat Crisp Chat
+        function loadCrispChat() {
+            var d = document;
+            var s = d.createElement("script");
+            s.src = "https://client.crisp.chat/l.js";
+            s.async = 1;
+            d.getElementsByTagName("head")[0].appendChild(s);
+        }
+
+        // Memuat Crisp Chat setelah halaman selesai dimuat
+        window.addEventListener('load', loadCrispChat);
+
+        // Tambahkan animasi ketika chat dibuka
+        $crisp.push(["on", "chat:opened", function() {
+            document.querySelector(".crisp-client").classList.add("animate__animated", "animate__bounceInRight");
+        }]);
+
+        // Pesan selamat datang kustom
+        $crisp.push(["set", "message:text", [
+            ["Halo! Selamat datang di Blok 12 Brotherhood. Ada yang bisa kami bantu?"],
+            ["Jangan ragu untuk bertanya tentang kegiatan atau informasi apa pun!"]
+        ]]);
+    </script>
 
 
 
@@ -496,6 +523,8 @@
     `;
     document.head.appendChild(style);
     </script>
+
+    
 <!--AKHIR BUTTON SCROLL-->
 
     <!-- AOS JS -->

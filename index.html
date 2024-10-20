@@ -432,6 +432,28 @@
             ["Halo! Selamat datang di Blok 12 Brotherhood. Ada yang bisa kami bantu?"],
             ["Jangan ragu untuk bertanya tentang kegiatan atau informasi apa pun!"]
         ]]);
+
+        // Animasi ikon chat
+        function animateIcon() {
+            var icon = document.querySelector(".crisp-client .cc-1m7s");
+            if (icon) {
+                icon.style.animation = "pulse 2s infinite";
+            }
+        }
+
+        // Panggil fungsi animasi setelah Crisp Chat dimuat
+        $crisp.push(["on", "session:loaded", animateIcon]);
+
+        // Tambahkan style untuk animasi
+        var style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.1); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 
 
